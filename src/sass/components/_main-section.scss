@@ -1,0 +1,39 @@
+.main-home {
+  width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and(min-width:768px) {
+    width: 768px;
+  }
+
+  @media screen and(min-width:1024px) {
+    width: 1024px;
+  }
+}
+
+.photo-card {
+  width: 280px;
+  margin: 15px;
+
+  @media screen and(min-width:768px) {
+    width: 294px;
+  }
+
+  @media screen and(min-width:1024px) {
+    width: 274px;
+  }
+}
+
+.photo-card img {
+  height: 400px;
+  width: 280px;
+
+  @media screen and(min-width:768px) {
+    width: 294px;
+  }
+
+  @media screen and(min-width:1024px) {
+    width: 274px;
+  }
+}
