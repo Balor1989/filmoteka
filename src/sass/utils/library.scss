@@ -1,0 +1,179 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100vw;
+}
+.logo-section {
+  display: flex;
+  margin-top: 46px;
+  /* justify-content: center;*/
+}
+.logo {
+  padding-top: 5px;
+  margin-right: 10px;
+}
+.logo-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+  display: none;
+}
+.header-lbr {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.56);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/images/Rectangle1024.png);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 480px;
+  height: 230px;
+  text-align: center;
+}
+.header-lbr__nav {
+  margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+}
+.header-lbr__nav-links {
+  margin: 0;
+  margin-top: 58px;
+  display: flex;
+  list-style: none;
+}
+.nav-link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  margin-right: 39px;
+  margin-bottom: 49px;
+  color: white;
+}
+.nav-link:last-child {
+  margin-right: 0;
+}
+.nav-link:focus,
+.nav-link:hover {
+  margin-bottom: 47px;
+  border-bottom: solid 2px;
+  border-color: #ff6b01;
+}
+
+.header-lbr__btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+.button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  border: solid 1px;
+  border-radius: 5px;
+
+  color: #fff;
+  background-color: transparent;
+  box-sizing: 1px;
+  width: 129px;
+  height: 44px;
+  margin-right: 20px;
+}
+
+.button:last-child {
+  margin-right: 0;
+}
+.button:focus,
+.button:hover {
+  background-color: #ff6b01;
+}
+.active {
+  margin-bottom: 47px;
+  border-bottom: solid 2px;
+  border-color: #ff6b01;
+}
+.is-active {
+  background-color: #ff6b01;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    width: 136px;
+  }
+  .logo-name {
+    display: block;
+  }
+  .header-lbr {
+    /*background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/Rectangle768.png);*/
+    max-width: 768px;
+  }
+  .container {
+    width: 768px;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-lbr {
+    max-width: 1024px;
+  }
+  .container {
+    width: 1024px;
+    padding-left: 71px;
+    padding-right: 71px;
+  }
+}
+
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header-lbr {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(/images/Rectangle1024@2x.png);
+  }
+}
+.main-list {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid tomato;
+}
