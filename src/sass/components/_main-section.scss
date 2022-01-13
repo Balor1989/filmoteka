@@ -28,6 +28,7 @@
 .photo-card img {
   height: 400px;
   width: 280px;
+  border-radius: 5px;
 
   @media screen and(min-width:768px) {
     width: 294px;
@@ -47,4 +48,24 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
+}
+
+.film-discription {
+  font-family: Roboto;
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+.film-details {
+  color: orange;
+}
+
+.film-reiting {
+  color: #fff;
+  background: orange;
+  padding: 1px 6px;
+  border-radius: 5px;
 }
