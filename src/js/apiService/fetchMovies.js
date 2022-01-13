@@ -12,11 +12,15 @@ async function fetchMovies(api, page) {
         const data = response.data.results
         //  Notify.success('Succes');
         console.log(genres)
-
+      
         const movies = data.map(
             (movie) => { 
-                const {release_date, poster_path, genre_ids } = movie
-                const genresOfMovie = genre_ids.map(id => genres[id]).join(', ');
+                const { release_date, poster_path, genre_ids } = movie
+                let genresID = genre_ids
+                if (genresID.length > 2) {
+                     genresID.splice(2, 5, "other")
+                }
+                let genresOfMovie = genresID.map(id => genres[id]?? 'Other').join(', ');
                 return {
                     ...movie,
                     release_date:release_date.slice(0, 4),
@@ -33,7 +37,7 @@ async function fetchMovies(api, page) {
         catch (error) {
         Notify.failure(`${error}`);
         return Promise.reject(error);
-    };  
+    };
 };
 
 export default fetchMovies
