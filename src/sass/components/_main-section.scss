@@ -29,6 +29,7 @@
   height: 400px;
   width: 280px;
   border-radius: 5px;
+  margin-bottom: 10px;
 
   @media screen and(min-width:768px) {
     width: 294px;
@@ -61,6 +62,7 @@
 
 .film-details {
   color: orange;
+  margin-top: 5px;
 }
 
 .film-reiting {
@@ -68,4 +70,5 @@
   background: orange;
   padding: 1px 6px;
   border-radius: 5px;
+  margin-left: 10px;
 }
