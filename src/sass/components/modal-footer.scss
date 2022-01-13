@@ -1,0 +1,106 @@
+.modal-footer {
+  display: flex;
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal-footer .modal_content {
+  background-color: #fcf7edd3;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid rgb(226, 121, 34);
+  border-radius: 20px;
+  width: 60%;
+  height: 60%;
+  z-index: 99999;
+  position: relative;
+}
+.modal-footer .modal_content .close_modal_window {
+  color: rgb(34, 34, 34);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close_modal_window:hover {
+  color: chocolate;
+}
+.review-section {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  &_name-color {
+    display: flex;
+    color: #ff6b08;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.8;
+    padding-bottom: 10px;
+    @media screen and (max-width: 772px) {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &_description-part {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1;
+    color: #68625d;
+    display: flex;
+    padding-bottom: 15px;
+  }
+  &_name-from {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.1;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    @media screen and (max-width: 772px) {
+      display: flex;
+      flex-direction: column;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.1;
+    }
+  }
+  &_image {
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.title-modalfooter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #ff6b08;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.8;
+  padding-bottom: 10px;
+  text-shadow: -3px 5px 1px #c8c5c5;
+}
