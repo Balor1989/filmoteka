@@ -1,0 +1,53 @@
+                {{#each this}}
+                    <img src={{img}} alt="img" class="modal__img"/>
+                    <div class="modal__all-info">
+                        <h2 class="modal__title">{{original_title}}</h2>
+                        <div class="modal__main-info">
+                            <ul class="modal__list-info">
+                                <li class="modal__item-info">
+                                    <p class="modal__part-info">Vote / Votes</p>
+                                </li>
+                                <li class="modal__item-info">
+                                    <p class="modal__part-info">Popularity</p>
+                                </li>
+                                <li class="modal__item-info">
+                                    <p class="modal__part-info">Original Title</p>
+                                </li>
+                                <li class="modal__item-info">
+                                    <p class="modal__part-info">Genre</p>
+                                </li>
+                            </ul>
+    
+                            <ul class="modal__list-info">
+                                <li class="modal__item-info">
+                                    <span class="modal__info modal__info-color">{{vote_average}}</span>
+                                    <span class="modal__part-info">/</span>
+                                    <span class="modal__info modal__info-light">{{vote_count}}</span>
+                                </li>
+                                <li class="modal__item-info">
+                                    <span class="modal__info">{{popularity}}</span>
+                                </li>
+                                <li class="modal__item-info">
+                                    <span class="modal__info">{{original_title}}</span>
+                                </li>
+                                <li class="modal__item-info">
+                                    <span class="modal__info">{{genre_ids}}</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="modal__title-description">About</h3>
+                        <p class="modal__description">{{overview}}</p>
+                    
+                        <div class="modal__btns">
+                            <button class="modal__btn btn__color">add to Watched</button>
+                            <button class="modal__btn ">add to queue</button>
+                            <button data-modal-close class="button-close">
+                                <svg class="button-close__icon"version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                    <title>close</title>
+                                    <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" stroke="#000" d="M8.533 8.533l14.933 14.933"></path>
+                                    <path fill="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" stroke="#000" d="M8.533 23.467l14.933-14.933"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    {{/each}}
