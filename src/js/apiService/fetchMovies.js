@@ -20,7 +20,7 @@ async function fetchMovies(api, page) {
                 if (genresID.length > 2) {
                      genresID.splice(2, 5, "other")
                 }
-                let genresOfMovie = genresID.map(id => genres[id]?? 'Other').join(', ');
+                let genresOfMovie = genresID.map(id => id === "other" ? 'Other' : genres[id]).join(', ');
                 return {
                     ...movie,
                     release_date:release_date.slice(0, 4),
