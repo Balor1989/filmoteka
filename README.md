@@ -16,8 +16,6 @@
 
 ```shell
 npm ci
-
-npx browserslist@latest --update-db
 ```
 
 ### Разработка
