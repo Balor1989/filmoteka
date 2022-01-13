@@ -1,5 +1,5 @@
 import './sass/main.scss';
-import fetchPopularMovies from './js/apiService/apiService'
+import  "/js/modal";
+import  "./js/apiService/fetchMovieDetails";
 
-
-fetchPopularMovies()
+fetchPopularMovies();
