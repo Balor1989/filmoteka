@@ -1,16 +1,22 @@
 .modal-footer {
   display: flex;
   display: none;
-  position: absolute;
   z-index: 1000;
   left: 0;
   right: 0;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  z-index: 999;
 }
+
 .modal-footer .modal_content {
   background-color: #fcf7edd3;
   margin: 5% auto;
@@ -22,6 +28,7 @@
   z-index: 99999;
   position: relative;
 }
+
 .modal-footer .modal_content .close_modal_window {
   color: rgb(34, 34, 34);
   float: right;

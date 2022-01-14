@@ -22,7 +22,9 @@ body {
   background-image: url(../images/holiday-christmas-bg.png);
   margin: 0px;
   padding: 0px;
+  position: relative;
 }
+
 .body.is-hidden {
   overflow: hidden;
 }
