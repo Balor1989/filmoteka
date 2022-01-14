@@ -2,3 +2,10 @@
 @import './utils/tag-settings';
 
 @import './components/main-section';
+@import './components/footer';
+@import './components/modal-footer.scss';
+@import './components/main-header';
+
+h1 {
+  background-color: #ff6b018e;
+}

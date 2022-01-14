@@ -1,34 +1,13 @@
-import movieCard from '../../templates/movieCard.hbs'
 import axios from "axios";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import refs from '../refs/variables';
-import { genres } from './fetchGenresOfMovie';
-const {rootEl} = refs
+import renderMovies from './renderMovies'
+
 
 async function fetchMovies(api, page) {
 
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/trending/movie/week?page=${page}&api_key=${api}`);
-        const data = response.data.results
-        //  Notify.success('Succes');
-        console.log(genres)
-
-        const movies = data.map(
-            (movie) => { 
-                const {release_date, poster_path, genre_ids } = movie
-                const genresOfMovie = genre_ids.map(id => genres[id]).join(', ');
-                return {
-                    ...movie,
-                    release_date:release_date.slice(0, 4),
-                    img: poster_path,
-                    genre_ids: genresOfMovie
-                };
-         }
-        )
-        console.log(movies)
-        const markup = movies.map(movieCard).join('')
-        rootEl.insertAdjacentHTML('beforeend', markup)
-        
+        renderMovies(response)   
     }
         catch (error) {
         Notify.failure(`${error}`);
@@ -37,3 +16,4 @@ async function fetchMovies(api, page) {
 };
 
 export default fetchMovies
+
