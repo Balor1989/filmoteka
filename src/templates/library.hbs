@@ -1,11 +1,11 @@
-   {{#each this}}
+
     <header class="header-lbr" id="library">
-        <section  class="container">
+        <section  class="container-lbr">
             <nav class="header-lbr__nav">
                 <div class="logo-section">
-                <span class="logo"><a href="">
+                <span class="logo-lbr"><a href="">
                     
-                    <img src="./images/film.svg" alt="logo">
+                    <img src="../images/film.svg" alt="logo">
                 </a></span>
                 <span class="logo-name">Filmoteka</span>
             </div>
@@ -16,10 +16,32 @@
                 </ul>
             </nav>   
                 <div class="header-lbr__btn">
-                                <button class="button is-active">Watched</button>
-                                <button class="button">queue</button>
+                                <button class="button-lbr is-active">Watched</button>
+                                <button class="button-lbr">queue</button>
             </div>
         </section>
     </header>
-    <div class="container"></div>
-    {{/each}}
+    
+    <main class="main-home">
+    <ul class="filmlist">
+
+    </ul>
+</main>
+
+    <footer class="footer">
+    <div class="footer-box">
+        <p class="footer-box_first-part"> &copy; 2020 <span class="footer-box_first-span">|</span> All Rights Reserved
+            <span class="footer-box_first-span">|</span></p>
+        <div class="footer-box_section">
+                <p class="footer-box_developed">Developed with</p>
+                <svg class="footer-box_icon">
+                    <use href="./images/arrow.svg#icon-footer_heart"></use>
+                </svg>
+                <p class="footer-box_second-part" id="btn_modal_window">by <span class="footer-box_line">GoITishki Students</span></p>
+                </div>
+        </div>
+
+   
+<script src="./js/footer.js"></script>
+</footer>
+    
