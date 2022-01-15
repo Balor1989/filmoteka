@@ -8,8 +8,10 @@ footerCloseModalBtn.addEventListener('click',onCloseModal)
   
 function onOpenModal() {
   footerModal.classList.remove("is-hidden")
+  document.body.style.overflow = "hidden"
 }
 
 function onCloseModal() {
   footerModal.classList.add("is-hidden")
+  document.body.style.overflow = ""
 }
