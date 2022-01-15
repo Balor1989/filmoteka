@@ -1,7 +1,7 @@
 const modal = document.getElementById("my_modal");
-    const btn = document.getElementById("btn_modal_window");
+const btn = document.querySelector(".footer-box_line");
 const span = document.getElementsByClassName("close_modal_window")[0];
-    const burger = document.querySelector('.burger');
+const burger = document.querySelector('.burger');
 
     btn.onclick = function () {
       modal.style.display = "block";
@@ -19,4 +19,8 @@ const span = document.getElementsByClassName("close_modal_window")[0];
 }
 
 
-    
+btn.addEventListener('click', openModal)
+  
+function openModal() {
+  console.log("click to footer btn")
+}
