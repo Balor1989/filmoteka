@@ -7,7 +7,7 @@ const { rootEl } = refs
 function renderMovies(response) {
     const data = response.data.results
         //  Notify.success('Succes');
-      //  console.log(genres)
+       console.log(genres)
 
         const movies = data.map(
             (movie) => {
@@ -25,7 +25,7 @@ function renderMovies(response) {
                 };
          }
         )
-        // console.log(movies)
+        console.log(movies)
         const markup = movies.map(movieCard).join('')
         rootEl.insertAdjacentHTML('beforeend', markup)
 }
