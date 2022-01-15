@@ -7,10 +7,10 @@ const { rootEl } = refs
 function renderMovies(response) {
     const data = response.data.results
         //  Notify.success('Succes');
-        console.log(genres)
+       console.log(genres)
 
         const movies = data.map(
-            (movie) => { 
+            (movie) => {
                 const { release_date, poster_path, genre_ids } = movie
                 let genresID = genre_ids
                 if (genresID.length > 2) {
