@@ -1,0 +1,49 @@
+{{#each this}}
+    <img srcset=" https://image.tmdb.org/t/p/w500{{img}} 1x,
+ 	https://image.tmdb.org/t/p/original{{img}} 2x" src='https://image.tmdb.org/t/p/w300{{img}}'
+	alt="{{original_title}}" class="modal__img"/>
+        <div class="modal__all-info">
+            <h2 class="modal__title">{{original_title}}</h2>
+            <div class="modal__main-info">
+                <ul class="modal__list-info">
+                    <li class="modal__item-info">
+                        <p class="modal__part-info">Vote / Votes</p>
+                    </li>
+                    <li class="modal__item-info">
+                        <p class="modal__part-info">Popularity</p>
+                    </li>
+                    <li class="modal__item-info">
+                        <p class="modal__part-info">Original Title</p>
+                    </li>
+                    <li class="modal__item-info">
+                        <p class="modal__part-info">Genre</p>
+                    </li>
+                </ul>
+    
+                <ul class="modal__list-info">
+                    <li class="modal__item-info">
+                        <span class="modal__info modal__info-color">{{vote_average}}</span>
+                        <span class="modal__part-info">/</span>
+                        <span class="modal__info modal__info-light">{{vote_count}}</span>
+                    </li>
+                    <li class="modal__item-info">
+                        <span class="modal__info">{{popularity}}</span>
+                    </li>
+                    <li class="modal__item-info">
+                        <span class="modal__info">{{original_title}}</span>
+                    </li>
+                    <li class="modal__item-info">
+                        <span class="modal__info">{{genre_ids}}</span>
+                    </li>
+                </ul>
+
+            </div>
+            <h3 class="modal__title-description">About</h3>
+            <p class="modal__description">{{overview}}</p>
+                    
+            <div class="modal__btns">
+                <button class="modal__btn btn__watched">add to Watched</button>
+                <button class="modal__btn btn__queue">add to queue</button>
+            </div>
+        </div>
+{{/each}}
