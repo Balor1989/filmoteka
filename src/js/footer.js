@@ -1,26 +1,15 @@
-const modal = document.getElementById("my_modal");
-const btn = document.querySelector(".footer-box_line");
-const span = document.getElementsByClassName("close_modal_window")[0];
-const burger = document.querySelector('.burger');
+const footerModal = document.querySelector(".overlay");
+const footerOpenModalBtn = document.querySelector(".footer-box_line");
+const footerCloseModalBtn = document.querySelector('.close_modal_window');
 
-    btn.onclick = function () {
-      modal.style.display = "block";
-    }
 
-    span.onclick = function () {
-      modal.style.display = "none";
-    }
-
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-     
+footerOpenModalBtn.addEventListener('click', onOpenModal)
+footerCloseModalBtn.addEventListener('click',onCloseModal)
+  
+function onOpenModal() {
+  footerModal.classList.remove("is-hidden")
 }
 
-
-btn.addEventListener('click', openModal)
-  
-function openModal() {
-  console.log("click to footer btn")
+function onCloseModal() {
+  footerModal.classList.add("is-hidden")
 }
