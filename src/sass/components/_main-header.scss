@@ -8,49 +8,48 @@
   background-position: center;
   background-size: cover;
   width: 100%;
-}
 
-/* @media screen and (min-width: 320px) {
-  .section-header {
-    max-width: 320px;
+  @media (min-resolution: 2dppx) {
+    background-image: url(../images/logo_mob_2x.jpg);
   }
-} */
 
-@media screen and (min-width: 768px) {
-  .section-header {
-    max-width: 768px;
+  @media screen and (min-width: 768px) {
     background-image: url(../images/logo_tabl_1x.jpg);
-  }
-}
 
-@media screen and (min-width: 1200px) {
-  .section-header {
-    max-width: 1200px;
-    background-image: url(../images/logo-big_1x.jpg);
+    @media (min-resolution: 2dppx) {
+      background-image: url(../images/logo_tabl_2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    background-image: url(../images/logo_big_1x.jpg);
+
+    @media (min-resolution: 2dppx) {
+      background-image: url(../images/logo_big_2x.jpg);
+    }
   }
 }
 
 .container {
+  max-width: 320px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 20px;
-}
 
-@media screen and (min-width: 768px) {
-  .container {
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
     padding-left: 71px;
     padding-right: 71px;
     margin-bottom: 60px;
   }
-}
 
-@media screen and (min-width: 1200px) {
-  .container {
-    padding-left: 20px;
-    padding-right: 20px;
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+    padding-left: 71px;
+    padding-right: 71px;
   }
 }
 
@@ -68,7 +67,6 @@
 }
 
 .logo__img {
-  //   max-width: 20px;
   display: inline-block;
 }
 
@@ -79,10 +77,8 @@
   font-size: 30px;
   line-height: 35px;
   color: #ffffff;
-}
 
-@media screen and (max-width: 768px) {
-  .logo-text {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 }
@@ -131,16 +127,20 @@
   margin-top: 40px;
   border-bottom: 1px #ffffff solid;
   justify-content: space-between;
+  margin-bottom: 97px;
 }
 
 .input {
+  outline: none;
+  width: 100%;
   display: block;
   justify-content: center;
   align-items: center;
-  background: none;
+  background-color: transparent;
   font-size: 14px;
   line-height: 16px;
   border: none;
+  color: #ffffff;
 }
 
 .input::placeholder {
@@ -154,15 +154,16 @@
   color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  border: transparent;
 }
-.error {
-  font-size: 14px;
-  line-height: 16px;
-  color: #ff001b;
-  opacity: 1;
-}
+// .error {
+//   font-size: 14px;
+//   line-height: 16px;
+//   color: #ff001b;
+//   opacity: 1;
+// }
 
-.is-hidden {
-  opacity: 0;
-}
+// .is-hidden {
+//   opacity: 0;
+// }
