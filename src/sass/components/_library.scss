@@ -3,7 +3,7 @@
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  width: 100vw;
+  width: 100%;
 }
 a {
   color: #ffffff;
@@ -36,14 +36,53 @@ a {
   margin-right: auto;
   background-color: rgba(0, 0, 0, 0.56);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../images/Rectangle1024@2x.png);
+    url(../images/Rectangle1.png);
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/Rectangle-1@2x.png);
+  }
 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  max-width: 480px;
+  max-width: 100%;
   height: 230px;
   text-align: center;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/Rectangle768.png);
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/Rectangle768@2x.png);
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/Rectangle1024.png);
+
+    @media (min-device-pixel-ratio: 2),
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../images/Rectangle1024@2x.png);
+    }
+  }
 }
 .header-lbr__nav {
   margin: 0;
@@ -144,15 +183,6 @@ a {
   .logo-name {
     display: block;
   }
-  .header-lbr {
-    /*background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ),
-      url(/images/Rectangle768.png);*/
-    max-width: 768px;
-  }
   .container-lbr {
     width: 768px;
     padding-left: 75px;
@@ -161,9 +191,6 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
-  .header-lbr {
-    max-width: 1024px;
-  }
   .container-lbr {
     width: 1024px;
     padding-left: 71px;
@@ -171,15 +198,6 @@ a {
   }
 }
 
-@media (min-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .header-lbr {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(/images/Rectangle1024@2x.png);
-  }
-}
 .main-list {
   margin-top: 10px;
   width: 100%;
