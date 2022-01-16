@@ -1,5 +1,5 @@
 import axios from "axios";
- 
+
 export let genres = null
 
 async function fetchGenresOfMovie(api) {
