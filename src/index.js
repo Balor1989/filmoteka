@@ -4,8 +4,9 @@ import backToTop from './js/plugins/backToTop'
 import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 import libraryClickBtn from './js/library';
-
+import fetchMovieDetails from './js/apiService/modal-fetchMovieDetails';
 
 backToTop()
 fetchPopularMovies()
 libraryClickBtn;
+fetchMovieDetails()
