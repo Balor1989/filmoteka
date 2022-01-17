@@ -1,5 +1,7 @@
 {{#each this}}
-    <img src= 'https://image.tmdb.org/t/p/w500{{img}}' alt="{{original_title}}" class="modal__img"/>
+    <img  srcset=" https://image.tmdb.org/t/p/w500{{poster_path}} 1x,
+ 				https://image.tmdb.org/t/p/original{{poster_path}} 2x" src='https://image.tmdb.org/t/p/w300{{poster_path}}'
+			alt="{{original_title}}" loading="lazy" class="modal__img"/>
         <div class="modal__all-info">
             <h2 class="modal__title">{{original_title}}</h2>
             <div class="modal__main-info">
