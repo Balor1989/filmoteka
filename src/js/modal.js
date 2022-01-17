@@ -13,12 +13,15 @@ refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 
 function onOpenModal(e) {
+  
   window.addEventListener('keydown', onKeyEscPress);
   if (e.target.nodeName === 'UL')  {
     return;
   } else {
     refs.backdrop.classList.toggle('is-hidden');
-    id = e.target.getAttribute('id');
+    id = e.target.closest('.photo-card').getAttribute('id')
+    console.log(id)
+    
     fetchMoviesDetails(id);
   }
 }
@@ -26,7 +29,7 @@ function onOpenModal(e) {
 function onCloseModal() {
   refs.backdrop.classList.toggle('is-hidden');
   window.removeEventListener('keydown', onKeyEscPress);
-  window.location.reload()
+  // window.location.reload()
 
 };
 

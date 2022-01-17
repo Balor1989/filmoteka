@@ -12,4 +12,4 @@ import './js/searchMovie';
 backToTop()
 fetchPopularMovies()
 libraryClickBtn;
-fetchMovieDetails()
+// fetchMovieDetails()
