@@ -4,6 +4,6 @@ import refs  from '../refs/variables';
 const { modalInfo } = refs;
 
 export default function rerenderMovieDetails(response) {
-    modalInfo.innerHTML= ""
-    modalInfo.insertAdjacentHTML('beforeend',movieDetailsTpl(response));
+    modalInfo.innerHTML=""
+    modalInfo.insertAdjacentHTML('afterbegin',movieDetailsTpl(response));
 }
