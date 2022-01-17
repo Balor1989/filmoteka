@@ -4,6 +4,7 @@
      modalInfo: document.querySelector('.modal__detail'),
      onModalWatchedBtn: document.querySelector('.btn__watched'),
      onModalQueueBtn: document.querySelector('.btn__queue'),
+     
 };
 
 export default refs
