@@ -13,7 +13,6 @@ refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 
 function onOpenModal(e) {
-  
   window.addEventListener('keydown', onKeyEscPress);
   if (e.target.nodeName === 'UL')  {
     return;
