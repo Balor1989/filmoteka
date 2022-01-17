@@ -14,8 +14,11 @@
 }
 
 .photo-card {
+  cursor: pointer;
   width: 280px;
   margin: 15px;
+  transform: scale(1);
+  transition: all 300ms $timer-function;
 
   @media screen and(min-width:768px) {
     width: 294px;
@@ -25,7 +28,9 @@
     width: 274px;
   }
 }
-
+.photo-card:hover {
+  transform: scale(1.1);
+}
 .photo-card img {
   height: 400px;
   width: 280px;
