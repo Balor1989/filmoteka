@@ -8,7 +8,6 @@ const refs = {
 };
 
 let id = null
-
 refs.openModal.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
@@ -21,8 +20,6 @@ function onOpenModal(e) {
     refs.backdrop.classList.toggle('is-hidden');
     id = e.target.getAttribute('id');
     fetchMoviesDetails(id);
-    
-
   }
 }
 
@@ -37,12 +34,13 @@ function onKeyEscPress(e) {
   if (e.keyCode === 27) {
     refs.backdrop.classList.toggle('is-hidden');
     window.removeEventListener('keydown', onKeyEscPress);
+  }
 }
-}
+
 function onBackdropClick(e) {
   if(e.target === e.currentTarget){
     refs.backdrop.classList.toggle('is-hidden');
-    window.removeEventListener('keydown', onKeyEscPress);
-    
+    window.removeEventListener('keydown', onKeyEscPress);   
   }
 }
+
