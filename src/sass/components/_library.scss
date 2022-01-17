@@ -13,9 +13,6 @@ a {
   margin-top: 46px;
 }
 .logo-lbr {
-  width: 24px;
-  height: 24px;
-
   padding-top: 5px;
   margin-right: 10px;
 }
@@ -31,9 +28,14 @@ a {
   color: #ffffff;
   display: none;
 }
+.hidden {
+  display: none;
+}
+
 .header-lbr {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.56);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../images/Rectangle1.png);
@@ -57,6 +59,7 @@ a {
     width: 480px;
   }
   @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
     width: 768px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(../images/Rectangle768.png);
@@ -86,7 +89,6 @@ a {
 }
 .header-lbr__nav {
   margin: 0;
-
   display: flex;
   justify-content: space-between;
 }
@@ -198,9 +200,15 @@ a {
   }
 }
 
-.main-list {
-  margin-top: 10px;
-  width: 100%;
+.main-library {
   height: 50px;
-  border: 1px solid tomato;
+  //background-color: #ff6b01;
+}
+.watched-list {
+  height: 20px;
+  background-color: aqua;
+}
+.queue-list {
+  height: 20px;
+  background-color: red;
 }
