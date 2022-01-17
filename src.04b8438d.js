@@ -108,4 +108,4 @@ let e=1,t="7f7f3cc03c05575ccb98184b93174d1e";const c=document.querySelector(".bu
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=a(require("./js/apiService/apiService")),r=a(require("./js/plugins/backToTop")),i=a(require("./js/library")),s=a(require("./js/apiService/modal-fetchMovieDetails"));function a(e){return e&&e.__esModule?e:{default:e}}require("./js/searchForm"),require("./js/searchMovie"),(0,r.default)(),(0,e.default)(),i.default;
 },{"./sass/main.scss":"clu1","./js/apiService/apiService":"odUE","./js/plugins/backToTop":"bfNt","./js/library":"BfNj","./js/apiService/modal-fetchMovieDetails":"TW77","./js/searchForm":"eKL4","./js/searchMovie":"HUSp"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka/src.837a5380.js.map
+//# sourceMappingURL=/filmoteka/src.04b8438d.js.map
