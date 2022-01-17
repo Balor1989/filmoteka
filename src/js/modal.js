@@ -11,6 +11,7 @@ refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 
 function onOpenModal(e) {
+  document.body.style.overflow = "hidden"
   window.addEventListener('keydown', onKeyEscPress);
   if (e.target.nodeName === 'UL')  {
     return;
@@ -23,19 +24,22 @@ function onOpenModal(e) {
 }
 
 function onCloseModal() {
+  document.body.style.overflow = ""
   refs.backdrop.classList.toggle('is-hidden');
   window.removeEventListener('keydown', onKeyEscPress);
 };
 
 function onKeyEscPress(e) {
-  if (e.keyCode === 27) {
+  if (e.code === "Escape") {
+    document.body.style.overflow = ""
     refs.backdrop.classList.toggle('is-hidden');
     window.removeEventListener('keydown', onKeyEscPress);
   }
 }
 
 function onBackdropClick(e) {
-  if(e.target === e.currentTarget){
+  if (e.target === e.currentTarget) {
+    document.body.style.overflow = ""
     refs.backdrop.classList.toggle('is-hidden');
     window.removeEventListener('keydown', onKeyEscPress);   
   }
