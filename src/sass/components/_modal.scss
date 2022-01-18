@@ -267,6 +267,8 @@
 }
 .modal__genres {
   display: flex;
+  max-width: 250px;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 .modal__genre:not(:last-child) {
