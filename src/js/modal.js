@@ -13,6 +13,7 @@ const refs = {
 refs.openModal.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
+refs.footerModal.addEventListener('click', onBackdropClick);
 refs.footerOpenModalBtn.addEventListener('click', onOpenModal)
 refs.footerCloseModalBtn.addEventListener('click', onCloseModal)
 
@@ -33,22 +34,8 @@ function onOpenModal(e) {
     fetchMoviesDetails(id);
   }
 
-
-function onCloseModal() {
-  document.body.style.overflow = ""
-    window.removeEventListener('keydown', onKeyEscPress);
-  if (!refs.backdrop.classList.contains('is-hidden')) {
-    refs.backdrop.classList.toggle('is-hidden')
-    return
-  }
-  if (!refs.footerModal.classList.contains('is-hidden')) {
-    refs.footerModal.classList.add('is-hidden')
-  }
-};
-
-function onKeyEscPress(e) {
-  if (e.code === "Escape") {
-    document.body.style.overflow = ""
+  function onChangeModal() {
+      document.body.style.overflow = ""
         window.removeEventListener('keydown', onKeyEscPress);
     if (!refs.backdrop.classList.contains('is-hidden')) {
     refs.backdrop.classList.toggle('is-hidden')
@@ -57,13 +44,25 @@ function onKeyEscPress(e) {
   if (!refs.footerModal.classList.contains('is-hidden')) {
     refs.footerModal.classList.add('is-hidden')
   }
-  }
 }
+
+function onCloseModal() {
+ onChangeModal()
+};
+
+function onKeyEscPress(e) {
+  if (e.code === "Escape") {
+  onChangeModal()
+  }
+};
+
 function onBackdropClick(e) {
+  console.log(e.target, e.currentTarget)
   if (e.target === e.currentTarget) {
-    document.body.style.overflow = ""
-    refs.backdrop.classList.toggle('is-hidden');
-    window.removeEventListener('keydown', onKeyEscPress);   
+    // document.body.style.overflow = ""
+    // refs.backdrop.classList.toggle('is-hidden');
+    // window.removeEventListener('keydown', onKeyEscPress);   
+     onChangeModal()
   }
 }
 
