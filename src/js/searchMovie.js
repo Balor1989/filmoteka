@@ -1,5 +1,5 @@
 import movieCard from '../templates/movieCard.hbs'
-//import { genres } from './apiService/fetchGenresOfMovie';
+import { genres } from './apiService/fetchGenresOfMovie';
 
 let page = 1;
 let keY = '7f7f3cc03c05575ccb98184b93174d1e';
@@ -34,16 +34,16 @@ function render(cards){
     const movies = data.map(
             (movie) => {
                 const { release_date, poster_path, genre_ids } = movie
-                /*let genresID = genre_ids
+                let genresID = genre_ids
                 if (genresID.length > 2) {
                      genresID.splice(2, 5, "other")
                 }
-                let genresOfMovie = genresID.map(id => id==="other" ? 'Other' : genres[id]).join(', ');*/
+                let genresOfMovie = genresID.map(id => id==="other" ? 'Other' : genres[id]).join(', ');
                 return {
                     ...movie,
                     release_date:release_date.slice(0, 4),
                     img: poster_path,
-                    //genre_ids: genresOfMovie
+                    genre_ids: genresOfMovie
                 };
          }
         )
