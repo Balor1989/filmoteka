@@ -26,10 +26,13 @@ function onButtonQueueClick() {
   refs.listWatched.classList.add('hidden')
   refs.listQueue.classList.remove('hidden')
   refs.buttonWatched.classList.remove('is-active')
+  refs.buttonQueue.classList.add('is-active')
 }
 function onButtonWatchedClick() {
   refs.listQueue.classList.add('hidden')
   refs.listWatched.classList.remove('hidden')
+  refs.buttonQueue.classList.remove('is-active')
+  refs.buttonWatched.classList.add('is-active')
 }
 
 export default libraryClickBtn

@@ -37,14 +37,22 @@ a {
   margin-right: auto;
   margin-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.56);
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
     url(../images/Rectangle1.png);
 
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
       url(../images/Rectangle-1@2x.png);
   }
 
@@ -61,28 +69,44 @@ a {
   @media screen and (min-width: 768px) {
     margin-bottom: 60px;
     width: 768px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
       url(../images/Rectangle768.png);
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
         url(../images/Rectangle768@2x.png);
     }
   }
 
   @media screen and (min-width: 1024px) {
     width: 100%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
       url(../images/Rectangle1024.png);
 
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ),
         url(../images/Rectangle1024@2x.png);
     }
   }
@@ -198,17 +222,4 @@ a {
     padding-left: 71px;
     padding-right: 71px;
   }
-}
-
-.main-library {
-  height: 50px;
-  //background-color: #ff6b01;
-}
-.watched-list {
-  height: 20px;
-  background-color: aqua;
-}
-.queue-list {
-  height: 20px;
-  background-color: red;
 }
