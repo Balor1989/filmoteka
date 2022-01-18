@@ -1,4 +1,3 @@
-
 import fetchGenresOfMovie from './fetchGenresOfMovie';
 import fetchMovies from './fetchMovies';
 import refs from '../refs/variables';
