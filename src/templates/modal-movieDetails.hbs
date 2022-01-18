@@ -31,8 +31,10 @@
                     <li class="modal__item-info">
                         <span class="modal__info">{{original_title}}</span>
                     </li>
-                    <li class="modal__item-info">
-                        <span class="modal__info">{{genre_ids}}</span>
+                    <li class="modal__item-info modal__genres">
+                        {{#each genres}}
+                        <span class="modal__info modal__genre">{{this.name}}</span>
+                        {{/each}}
                     </li>
                 </ul>
 
