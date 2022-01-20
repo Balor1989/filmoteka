@@ -22,10 +22,12 @@
   top: 50%;
   background: #ffffff;
   z-index: 10000;
+  overflow: scroll;
+  border-radius: 5px;
 
   @media screen and (min-width: 320px) {
     min-width: 280px;
-    min-height: 500px;
+    height: 500px;
     padding-top: 48px;
     padding-left: 20px;
     padding-bottom: 48px;
@@ -33,7 +35,7 @@
   }
   @media screen and (min-width: 768px) {
     width: 658px;
-    min-height: 562px;
+    height: 562px;
     padding: 42px 28px;
     min-height: 568px;
     padding-top: 42px;
@@ -43,13 +45,12 @@
   }
   @media screen and (min-width: 1280px) {
     width: 882px;
-    min-height: 568px;
+    height: 568px;
     padding-top: 50px;
     padding-left: 30px;
     padding-bottom: 50px;
     padding-right: 30px;
   }
-
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   .backdrop.is-hidden & {
@@ -77,12 +78,10 @@
   color: #000000;
   cursor: pointer;
 }
-.film-discription {
-  cursor: pointer;
-}
 .modal__img {
+margin: 0 auto;
   @media screen and (min-width: 320px) {
-    min-width: 240px;
+    width: 240px;
     min-height: 356px;
   }
   @media screen and (min-width: 768px) {
@@ -108,8 +107,8 @@
   }
 }
 .modal__item-info {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 108px auto;
 }
 .modal__btns {
   display: flex;
@@ -151,21 +150,18 @@
     min-width: 136px;
   }
 
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   cursor: pointer;
   &:hover {
-    background: #ff6b01;
+    background-color: #ff6b01;
     border: none;
   }
 }
 .btn__watched {
   margin-right: 15px;
 }
-.film-discription {
-  cursor: pointer;
-}
+
 .modal__title {
   font-family: Roboto;
   font-style: normal;
@@ -220,7 +216,12 @@
   text-align: center;
   justify-content: center;
 }
+
 .modal__list-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.33;
+  
   @media screen and (min-width: 320px) {
     min-width: 112px;
   }
@@ -231,16 +232,10 @@
     margin-bottom: 10px;
   }
 }
-// .modal__list-info:last-child{
-//     @media screen and (min-width: 320px) {
-//         margin-left: 39px;
-//       }
-//       @media screen and (min-width: 1280px) {
-//         margin-left: 83px;
-//       }
-// }
+
 .modal__item-info {
   margin-bottom: 10px;
+  
 }
 .modal__title-description {
   font-family: Roboto;
@@ -265,15 +260,13 @@
 .modal__main-info {
   display: flex;
 }
-.modal__genres {
-  display: flex;
-  max-width: 250px;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
 .modal__genre:not(:last-child) {
   margin-right: 5px;
 }
 .modal__genre:not(:last-child)::after {
   content: ', ';
+}
+.modal__flex{
+  display: flex;
+  flex-wrap: wrap;
 }

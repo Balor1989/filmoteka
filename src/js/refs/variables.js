@@ -5,8 +5,7 @@
      onModalWatchedBtn: document.querySelector('.btn__watched'),
      onModalQueueBtn: document.querySelector('.btn__queue'),
      btnSearch: document.querySelector('.button'),
-     inputName: document.querySelector('.input')
-     
+     inputName: document.querySelector('.input')  
 };
 
 export default refs
