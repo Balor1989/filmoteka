@@ -1,5 +1,5 @@
-import movieDetailsTpl from '../../templates/modal-movieDetails.hbs';
-import refs  from '../refs/variables';
+import movieDetailsTpl from '../../../templates/modal-movieDetails.hbs';
+import refs  from '../../refs/variables';
 
 const { modalInfo } = refs;
 

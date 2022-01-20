@@ -1,7 +1,7 @@
-import refs from '../refs/variables';
+import refs from '../../refs/variables';
 import axios from "axios";
-import rerenderMovieDetails from '../apiService/modal-renderMovieDetails';
-import Loading from '../plugins/loading'
+import rerenderMovieDetails from '../render/renderMovieModalValues';
+import Loading from '../../plugins/loading'
 
 
 export default async function fetchMoviesDetails(id) {
