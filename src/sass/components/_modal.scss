@@ -24,15 +24,16 @@
 
     @media screen and (min-width: 320px) {
         min-width: 280px;
-        min-height: 500px;
+        height: 500px;
         padding-top: 48px;
         padding-left: 20px;
         padding-bottom: 48px;
         padding-right: 20px;
+        overflow: scroll;
       }
       @media screen and (min-width: 768px) {
         width: 658px;
-        min-height: 562px;
+        height: 562px;
         padding: 42px 28px;
         min-height: 568px;
         padding-top: 42px;
@@ -42,7 +43,7 @@
       }
       @media screen and (min-width: 1280px) {
         width: 882px;
-        min-height: 568px;
+        height: 568px;
         padding-top: 50px;
         padding-left: 30px;
         padding-bottom: 50px;
@@ -82,16 +83,18 @@
 }
 .modal__img{
     @media screen and (min-width: 320px) {
-        min-width: 240px;
-        min-height: 356px;
+        margin: 0 auto;
+        max-width: 240px;
+        height: 356px;
+        scroll-snap-align: start;
       }
       @media screen and (min-width: 768px) {
-        min-width: 264px;
-        min-height: 374px;
+        max-width: 264px;
+        height: 374px;
       }
       @media screen and (min-width: 1280px) {
-        min-width: 396px;
-        min-height: 478px;
+        max-width: 396px;
+        height: 478px;
       }
 }
 .modal__detail{
@@ -108,14 +111,40 @@
       }
 }
 .modal__item-info{
-    display: flex;
-    flex-direction: row;
+  display: grid;
+  grid-template-columns: 108px auto;
 }
 .modal__btns{
-    display: flex;
+  flex-grow: 1;
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
     @media screen and (max-width: 767px) {
         justify-content: center;
     }
+}
+.modal__flex{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.modal__genre:not(:last-child){
+  margin-left: 3px;
+}
+.modal__genre{
+  display: flex;
+  flex-direction: row-gap;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  color: #000000;
 }
 .modal__btn{
     font-family: Roboto;
@@ -127,7 +156,7 @@
     height: 44px;
     border-radius: 5px;
     border: 1px solid #000000;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     box-sizing: border-box;
     color: #000;
     padding-top: 14px;
@@ -152,20 +181,19 @@
       }
 
 
-    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
      
     cursor: pointer;  
     &:hover{
-        background: #FF6B01;
+        background-color: #FF6B01;
         border: none;
     }
 }
-.btn__watched{
-    margin-right: 15px;  
+.modal__btn.is-active{
+  background-color: rgb(255, 107, 1);
+  border: none;
 }
-.film-discription{
-  cursor: pointer;
-}
+
 .modal__title{
     font-family: Roboto;
     font-style: normal;
@@ -221,29 +249,13 @@
     justify-content: center;
 }
 .modal__list-info{
-
-    @media screen and (min-width: 320px) {
-        min-width: 112px;
-      }
-      @media screen and (min-width: 768px) {
-        min-width: 125px;
-      }
-      @media screen and (min-width: 1280px) {
-        margin-bottom: 10px;
-      }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.33;
 
 }
-// .modal__list-info:last-child{
-//     @media screen and (min-width: 320px) {
-//         margin-left: 39px;
-//       }
-//       @media screen and (min-width: 1280px) {
-//         margin-left: 83px;
-//       }
-// }
-.modal__item-info{
-    margin-bottom: 10px;  
-}
+
 .modal__title-description{
     font-family: Roboto;
     font-style: normal;
@@ -267,4 +279,5 @@
 }
 .modal__main-info{
     display: flex;
+    margin-bottom: 10px;
 }

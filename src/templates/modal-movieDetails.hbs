@@ -7,41 +7,36 @@
                 <ul class="modal__list-info">
                     <li class="modal__item-info">
                         <p class="modal__part-info">Vote / Votes</p>
+                        <p class="modal__info"><span class="modal__info-color">{{vote_average}}</span>
+                        <span class="modal__info-light"> / {{vote_count}}</span>
+                        </p>
                     </li>
                     <li class="modal__item-info">
                         <p class="modal__part-info">Popularity</p>
+                        <p class="modal__info">{{popularity}}</p>
                     </li>
                     <li class="modal__item-info">
                         <p class="modal__part-info">Original Title</p>
+                        <p class="modal__info">{{original_title}}</p>
                     </li>
-                    <li class="modal__item-info">
+                    
+                    <li class="modal__item-info ">
                         <p class="modal__part-info">Genre</p>
+                        <p class="modal__flex">
+                            {{#each genres}}
+                        <span class="modal__genre">{{this.name}}</span>
+                            {{/each}}
+                        </p>
                     </li>
+                    
                 </ul>
     
-                <ul class="modal__list-info">
-                    <li class="modal__item-info">
-                        <span class="modal__info modal__info-color">{{vote_average}}</span>
-                        <span class="modal__part-info">/</span>
-                        <span class="modal__info modal__info-light">{{vote_count}}</span>
-                    </li>
-                    <li class="modal__item-info">
-                        <span class="modal__info">{{popularity}}</span>
-                    </li>
-                    <li class="modal__item-info">
-                        <span class="modal__info">{{original_title}}</span>
-                    </li>
-                    <li class="modal__item-info">
-                        <span class="modal__info">{{genre_ids}}</span>
-                    </li>
-                </ul>
-
             </div>
             <h3 class="modal__title-description">About</h3>
             <p class="modal__description">{{overview}}</p>
                     
             <div class="modal__btns">
-                <button class="modal__btn btn__watched">add to Watched</button>
-                <button class="modal__btn btn__queue">add to queue</button>
+                <button class="modal__btn btn__watched add">add to Watched</button>
+                <button class="modal__btn btn__queue add" >add to queue</button>
             </div>
         </div>

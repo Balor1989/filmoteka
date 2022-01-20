@@ -1,22 +1,53 @@
 import fetchMoviesDetails from "../js/apiService/modal-fetchMovieDetails";
 
 const refs = {
+  modal: document.querySelector('.modal'),
   openModal: document.querySelector('.filmlist'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   backdrop: document.querySelector('[data-modal]'),
   footerModal: document.querySelector(".overlay"),
   footerOpenModalBtn: document.querySelector(".footer-box_line"),
-  footerCloseModalBtn: document.querySelector('.close_modal_window')
+  footerCloseModalBtn: document.querySelector('.close_modal_window'),
 };
-
-
+ 
 refs.openModal.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
-refs.footerOpenModalBtn.addEventListener('click', onOpenModal)
-refs.footerCloseModalBtn.addEventListener('click', onCloseModal)
+refs.footerOpenModalBtn.addEventListener('click', onOpenModal);
+refs.footerCloseModalBtn.addEventListener('click', onCloseModal);
+refs.modal.addEventListener('click',  onModalWatchedBtn);
+refs.modal.addEventListener('click',  onModalQueueBtn);
+
 
 console.log(refs.backdrop)
+
+function onModalWatchedBtn(e) {
+ const onModalWatchedBtn = e.target.closest('.btn__watched')
+ console.log(onModalWatchedBtn)
+  if (onModalWatchedBtn.textContent === "Add to watched") {
+    onModalWatchedBtn.innerHTML = "Remove from watched";
+    onModalWatchedBtn.style.backgroundColor = "rgb(255, 107, 1)";
+    onModalWatchedBtn.style.border = "none";
+  } else {
+    onModalWatchedBtn.innerHTML = "Add to watched";
+    onModalWatchedBtn.style.backgroundColor = "#FFFFFF";
+    onModalWatchedBtn.style.border = " 1px solid #000000";
+  }
+}
+function onModalQueueBtn(e) {
+  const onModalQueueBtn = e.target.closest('.btn__queue')
+  console.log(onModalQueueBtn)
+  if (onModalQueueBtn.textContent === "Add to queue") {
+    onModalQueueBtn.innerHTML = "Remove from queue";
+    onModalQueueBtn.style.backgroundColor = "rgb(255, 107, 1)";
+    onModalQueueBtn.style.border = "none";
+  } else {
+    onModalQueueBtn.innerHTML  = "Add to queue";
+    onModalQueueBtn.style.backgroundColor = "#FFFFFF";
+    onModalQueueBtn.style.border = " 1px solid #000000";
+  }
+}
+
 
 function onOpenModal(e) {
   document.body.style.overflow = "hidden"
@@ -31,12 +62,13 @@ function onOpenModal(e) {
     refs.backdrop.classList.toggle('is-hidden');
     let id = e.target.closest('.photo-card').getAttribute('id')
     fetchMoviesDetails(id);
+    
   }
 
 
 function onCloseModal() {
   document.body.style.overflow = ""
-    window.removeEventListener('keydown', onKeyEscPress);
+  window.removeEventListener('keydown', onKeyEscPress);
   if (!refs.backdrop.classList.contains('is-hidden')) {
     refs.backdrop.classList.toggle('is-hidden')
     return
@@ -66,4 +98,3 @@ function onBackdropClick(e) {
     window.removeEventListener('keydown', onKeyEscPress);   
   }
 }
-
