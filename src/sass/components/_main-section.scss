@@ -1,3 +1,4 @@
+.main-library,
 .main-home {
   width: 320px;
   margin-right: auto;
@@ -45,7 +46,8 @@
     width: 274px;
   }
 }
-
+.queue-list,
+.watched-list,
 .filmlist {
   display: flex;
   justify-content: center;

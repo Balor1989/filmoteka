@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.25);
   opacity: 1;
   transition: opacity 250ms $timer-function;
 }
@@ -13,27 +13,24 @@
   pointer-events: none;
 }
 .modal-footer {
+  position: absolute;
   display: flex;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   overflow: hidden;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  max-width: 800px;
+  max-height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-footer .modal_content {
   background-color: #fcf7edd3;
-  margin: 5% auto;
   padding: 20px;
   border: 1px solid rgb(226, 121, 34);
   border-radius: 20px;
-  width: 50%;
-  height: 80%;
-  z-index: 99999;
   position: relative;
 }
 

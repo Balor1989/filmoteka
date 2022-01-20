@@ -1,5 +1,7 @@
-import fetchMoviesDetails from "../js/apiService/modal-fetchMovieDetails";
+import fetchMoviesDetails from "../js/apiService/fetch/fetchMovieModalValues";
+import ref  from './refs/variables';
 
+const { modalInfo } = ref;
 const refs = {
   modal: document.querySelector('.modal'),
   openModal: document.querySelector('.filmlist'),
@@ -19,7 +21,6 @@ refs.modal.addEventListener('click',  onModalWatchedBtn);
 refs.modal.addEventListener('click',  onModalQueueBtn);
 
 
-console.log(refs.backdrop)
 
 function onModalWatchedBtn(e) {
  const onModalWatchedBtn = e.target.closest('.btn__watched')
@@ -54,15 +55,15 @@ function onOpenModal(e) {
   window.addEventListener('keydown', onKeyEscPress);
   if (e.target.nodeName === 'UL')  {
     return;
-  }
+  };
+
   if (e.target === refs.footerOpenModalBtn) {
     refs.footerModal.classList.remove("is-hidden")
     return
-  }
+  };
     refs.backdrop.classList.toggle('is-hidden');
     let id = e.target.closest('.photo-card').getAttribute('id')
     fetchMoviesDetails(id);
-    
   }
 
 
@@ -72,29 +73,25 @@ function onCloseModal() {
   if (!refs.backdrop.classList.contains('is-hidden')) {
     refs.backdrop.classList.toggle('is-hidden')
     return
-  }
+    }
   if (!refs.footerModal.classList.contains('is-hidden')) {
     refs.footerModal.classList.add('is-hidden')
   }
+}
+
+function onCloseModal() {
+ onChangeModal()
 };
 
 function onKeyEscPress(e) {
   if (e.code === "Escape") {
-    document.body.style.overflow = ""
-        window.removeEventListener('keydown', onKeyEscPress);
-    if (!refs.backdrop.classList.contains('is-hidden')) {
-    refs.backdrop.classList.toggle('is-hidden')
-    return
+  onChangeModal()
   }
-  if (!refs.footerModal.classList.contains('is-hidden')) {
-    refs.footerModal.classList.add('is-hidden')
-  }
-  }
-}
+};
+
 function onBackdropClick(e) {
   if (e.target === e.currentTarget) {
-    document.body.style.overflow = ""
-    refs.backdrop.classList.toggle('is-hidden');
-    window.removeEventListener('keydown', onKeyEscPress);   
+     onChangeModal()
   }
-}
+};
+

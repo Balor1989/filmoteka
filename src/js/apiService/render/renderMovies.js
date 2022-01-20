@@ -1,6 +1,6 @@
-import refs from '../refs/variables';
-import movieCard from '../../templates/movieCard.hbs'
-import { genres } from './fetchGenresOfMovie';
+import refs from '../../refs/variables';
+import movieCard from '../../../templates/movieCard.hbs'
+import { genres } from '../fetch/fetchGenresOfMovie';
 
 const { rootEl } = refs
 
@@ -26,7 +26,9 @@ function renderMovies(response) {
          }
         )
         console.log(movies)
-        const markup = movies.map(movieCard).join('')
+    
+    const markup = movies.map(movieCard).join('')
+        rootEl.innerHTML=''
         rootEl.insertAdjacentHTML('beforeend', markup)
 }
 
