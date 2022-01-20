@@ -13,7 +13,7 @@ async function fetchMoviesByName(api, page,inputName) {
         Loading.remove()
     }
         catch (error) {
-        Notify.failure(`${error}`);
+       // Notify.failure(`${error}`);
         Loading.remove()
         return Promise.reject(error);
     };  
