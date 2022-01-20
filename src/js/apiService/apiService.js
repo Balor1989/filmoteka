@@ -1,7 +1,7 @@
 import fetchGenresOfMovie from './fetch/fetchGenresOfMovie';
-import fetchPopularMovies from '../apiService/fetch/fetchPopularMovies';
-import fetchMoviesByName from '../apiService/fetch/fetchMoviesByName';
-import refs from '../../js/refs/variables';
+import fetchPopularMovies from './fetch/fetchPopularMovies';
+import fetchMoviesByName from './fetch/fetchMoviesByName';
+import refs from '../refs/variables';
 
 const { API_KEY, btnSearch, inputName } = refs;
 let page = 1
