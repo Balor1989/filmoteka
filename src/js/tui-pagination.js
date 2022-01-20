@@ -28,12 +28,15 @@ const options = { // below default value of options
              '</a>'
      }
 };
+
 const pagination = new Pagination(container, options);
-paganation.on('afterMove', (event) => {
+
+pagination.on('afterMove', (event) => {
      const currentPage = event.page;
      console.log(currentPage);
 });
-paganation.on('beforeMove', (event) => {
+
+pagination.on('beforeMove', (event) => {
     const currentPage = event.page;
 
     if (currentPage === 10) {
