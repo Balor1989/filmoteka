@@ -1,4 +1,4 @@
-import fetchMoviesDetails from "../js/apiService/modal-fetchMovieDetails";
+import fetchMoviesDetails from "../js/apiService/fetch/fetchMovieModalValues";
 import ref  from './refs/variables';
 
 const { modalInfo } = ref;

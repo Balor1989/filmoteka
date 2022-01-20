@@ -1,16 +1,10 @@
-import movieCard from '../templates/movieCard.hbs'
-import { genres } from './apiService/fetchGenresOfMovie';
+// import movieCard from '../templates/movieCard.hbs'
+// import { genres } from './apiService/fetchGenresOfMovie';
 
 let page = 1;
 let keY = '7f7f3cc03c05575ccb98184b93174d1e';
 
-const refs = {
-    cardConteiner: document.querySelector('.filmlist')
-}
 
-const btnSearch = document.querySelector('.button');
-
-btnSearch.addEventListener('click', searchName)
 
 function searchName(e) {
     e.preventDefault();
