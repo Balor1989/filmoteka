@@ -1,6 +1,7 @@
 import refs from '../../refs/variables';
 import axios from "axios";
 import rerenderMovieDetails from '../render/renderMovieModalValues';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Loading from '../../plugins/loading'
 
 
@@ -10,11 +11,13 @@ export default async function fetchMoviesDetails(id) {
       rerenderMovieDetails(response.data)
       Loading.remove()
       console.log(response.data)
-    } catch (error) {
-      console.log(error);   
-      Loading.remove()
     }
-  }
+    catch (error) {
+        Notify.failure(`${error}`);
+        Loading.remove()
+        return Promise.reject(error);
+  };
+};
 
 
 
