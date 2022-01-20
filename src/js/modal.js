@@ -1,6 +1,7 @@
 import fetchMoviesDetails from "../js/apiService/fetch/fetchMovieModalValues";
 import ref  from './refs/variables';
 
+
 const { modalInfo } = ref;
 const refs = {
   modal: document.querySelector('.modal'),
@@ -21,7 +22,6 @@ refs.modal.addEventListener('click',  onModalWatchedBtn);
 refs.modal.addEventListener('click',  onModalQueueBtn);
 
 
-
 function onModalWatchedBtn(e) {
  const onModalWatchedBtn = e.target.closest('.btn__watched')
  console.log(onModalWatchedBtn)
@@ -33,7 +33,8 @@ function onModalWatchedBtn(e) {
     onModalWatchedBtn.innerHTML = "Add to watched";
     onModalWatchedBtn.style.backgroundColor = "#FFFFFF";
     onModalWatchedBtn.style.border = " 1px solid #000000";
-  }
+  
+};
 }
 function onModalQueueBtn(e) {
   const onModalQueueBtn = e.target.closest('.btn__queue')
@@ -47,6 +48,7 @@ function onModalQueueBtn(e) {
     onModalQueueBtn.style.backgroundColor = "#FFFFFF";
     onModalQueueBtn.style.border = " 1px solid #000000";
   }
+
 }
 
 
@@ -77,6 +79,20 @@ function onCloseModal() {
   if (!refs.footerModal.classList.contains('is-hidden')) {
     refs.footerModal.classList.add('is-hidden')
   }
+}
+
+function onChangeModal() {
+  document.body.style.overflow = "";
+  window.removeEventListener('keydown', onKeyEscPress);
+  if (!refs.backdrop.classList.contains('is-hidden')) {
+    refs.backdrop.classList.toggle('is-hidden')
+    modalInfo.innerHTML=""
+  return
+  }
+
+if (!refs.footerModal.classList.contains('is-hidden')) {
+  refs.footerModal.classList.add('is-hidden')
+}
 }
 
 function onCloseModal() {

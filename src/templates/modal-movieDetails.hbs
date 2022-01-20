@@ -22,31 +22,13 @@
                     
                     <li class="modal__item-info ">
                         <p class="modal__part-info">Genre</p>
-                        <p class="modal__flex">
+                        <p class="modal__flex modal__info">
                             {{#each genres}}
                         <span class="modal__genre">{{this.name}}</span>
                             {{/each}}
                         </p>
                     </li>
                     
-                </ul>
-                <ul class="modal__list-info">
-                    <li class="modal__item-info">
-                        <span class="modal__info modal__info-color">{{vote_average}}</span>
-                        <span class="modal__part-info">/</span>
-                        <span class="modal__info modal__info-light">{{vote_count}}</span>
-                    </li>
-                    <li class="modal__item-info">
-                        <span class="modal__info">{{popularity}}</span>
-                    </li>
-                    <li class="modal__item-info">
-                        <span class="modal__info">{{original_title}}</span>
-                    </li>
-                    <li class="modal__item-info modal__genres">
-                        {{#each genres}}
-                        <span class="modal__info modal__genre">{{this.name}}</span>
-                        {{/each}}
-                    </li>
                 </ul>
             </div>
             <h3 class="modal__title-description">About</h3>
