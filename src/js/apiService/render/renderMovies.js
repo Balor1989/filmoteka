@@ -13,13 +13,20 @@ function renderMovies(response) {
             (movie) => {
                 const { release_date, poster_path, genre_ids } = movie
                 let genresID = genre_ids
-                if (genresID.length > 2) {
+                let date = release_date
+                if (genresID && genresID.length > 2) {
                      genresID.splice(2, 5, "other")
                 }
-                let genresOfMovie = genresID.map(id => id==="other" ? 'Other' : genres[id]).join(', ');
+                if (date) {
+                    date=release_date.slice(0, 4)
+                }
+                if (!date) {
+                    date='????'
+                }
+                let genresOfMovie = genresID.map(id => id === "other" ? 'Other' : genres[id]).join(', ');
                 return {
                     ...movie,
-                    release_date:release_date.slice(0, 4),
+                    release_date:date,
                     img: poster_path,
                     genre_ids: genresOfMovie
                 };
