@@ -1,11 +1,14 @@
 import fetchGenresOfMovie from './fetch/fetchGenresOfMovie';
 import fetchPopularMovies from './fetch/fetchPopularMovies';
 import fetchMoviesByName from './fetch/fetchMoviesByName';
+import debounce from "lodash.debounce";
 import refs from '../refs/variables';
 import pagination from '../plugins/tui-pagination';
 
 const { API_KEY, btnSearch, inputName } = refs;
  export let page = 1
+
+
 
 // Handlers
 btnSearch.addEventListener('click', searchMovieByName)
@@ -18,6 +21,18 @@ function searchMovieByName(e) {
     fetchMoviesByName(API_KEY, page, inputName.value);
 }
 
+const onFetchMovieByName = (e) => {
+    let x = '';
+    x = e.target.value;
+    console.log(x)
+    fetchMoviesByName(API_KEY, page=1, inputName.value)
+    pagination.reset();
+    if (x === '') {
+        fetchPopularMovies(API_KEY, page=1);
+        pagination.reset();
+        return;
+    }
+}
 
 // Search for popular films. 
 // Loads a list of movies on the main page and also adds genres to the "genres" variable
@@ -49,3 +64,5 @@ pagination.on('afterMove', (event) => {
 pagination.on('beforeMove', (event) => {
     usePagination(event);
 });
+
+inputName.addEventListener('input', debounce( onFetchMovieByName, 300))
