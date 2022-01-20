@@ -2,9 +2,10 @@ import fetchGenresOfMovie from './fetch/fetchGenresOfMovie';
 import fetchPopularMovies from './fetch/fetchPopularMovies';
 import fetchMoviesByName from './fetch/fetchMoviesByName';
 import refs from '../refs/variables';
+import pagination from '../plugins/tui-pagination';
 
 const { API_KEY, btnSearch, inputName } = refs;
-let page = 1
+ export let page = 1
 
 // Handlers
 btnSearch.addEventListener('click', searchMovieByName)
@@ -26,3 +27,25 @@ function renderPopularMovies() {
 }
 
 export default renderPopularMovies
+
+
+
+function usePagination(event) {
+    page = event.page;
+    if (inputName.value) {
+        fetchMoviesByName(API_KEY, page, inputName.value)
+        return;
+    }
+    if (!inputName.value) {
+        fetchPopularMovies(API_KEY, page)
+    }
+}
+
+
+pagination.on('afterMove', (event) => {
+    usePagination(event);
+});
+
+pagination.on('beforeMove', (event) => {
+    usePagination(event);
+});

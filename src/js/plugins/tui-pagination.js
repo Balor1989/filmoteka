@@ -1,6 +1,5 @@
 
-const Pagination = require('tui-pagination');
-
+import Pagination from 'tui-pagination';
 
 const container = document.getElementById('pagination');
 const options = { // below default value of options
@@ -30,17 +29,6 @@ const options = { // below default value of options
 };
 
 const pagination = new Pagination(container, options);
+export default pagination
 
-pagination.on('afterMove', (event) => {
-     const currentPage = event.page;
-     console.log(currentPage);
-});
 
-pagination.on('beforeMove', (event) => {
-    const currentPage = event.page;
-
-    if (currentPage === 10) {
-        return false;
-        // return true;
-    }
-});
