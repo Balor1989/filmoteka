@@ -50,7 +50,6 @@ function usePagination(event) {
 
 
 pagination.on('afterMove', (event) => {
-    usePagination(event);
 });
 
 pagination.on('beforeMove', (event) => {
