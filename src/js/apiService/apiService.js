@@ -5,34 +5,26 @@ import debounce from "lodash.debounce";
 import refs from '../refs/variables';
 import pagination from '../plugins/tui-pagination';
 
-const { API_KEY, btnSearch, inputName } = refs;
+const { API_KEY, inputName } = refs;
  export let page = 1
 
 
-
-// Handlers
-btnSearch.addEventListener('click', searchMovieByName)
-
 // Search movies by user request
-// Runs with a handler by clicking on the search button 
-function searchMovieByName(e) {
-    e.preventDefault();
-    // const inputName = document.querySelector('.input').value;
-    fetchMoviesByName(API_KEY, page, inputName.value);
-}
-
+// Runs with a handler by input value to the search 
 const onFetchMovieByName = (e) => {
-    let x = '';
-    x = e.target.value;
-    console.log(x)
-    fetchMoviesByName(API_KEY, page=1, inputName.value)
-    pagination.reset();
-    if (x === '') {
+    if (!e.target.value) {
         fetchPopularMovies(API_KEY, page=1);
         pagination.reset();
         return;
     }
+    console.log(e.target.value)
+    fetchMoviesByName(API_KEY, page=1, inputName.value)
+    pagination.reset();
+    
 }
+
+// Handlers
+inputName.addEventListener('input', debounce( onFetchMovieByName, 300))
 
 // Search for popular films. 
 // Loads a list of movies on the main page and also adds genres to the "genres" variable
@@ -65,4 +57,3 @@ pagination.on('beforeMove', (event) => {
     usePagination(event);
 });
 
-inputName.addEventListener('input', debounce( onFetchMovieByName, 300))
