@@ -1,3 +1,8 @@
+button {
+  border: none;
+  background-color: transparent;
+}
+
 .section-header {
   padding: 0;
   margin: 0;
@@ -56,14 +61,17 @@
 .header {
   position: relative;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 46px;
-  left: 0px;
+  align-items: flex-end;
+  // position: absolute;
+  // top: 46px;
+  // left: 0px;
 }
 
 .logo__img {
@@ -83,6 +91,12 @@
   }
 }
 
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row;
+}
 .header-nav__items {
   display: flex;
   justify-content: flex-end;
@@ -104,6 +118,14 @@
   color: #ffffff;
 }
 
+.header-nav__link:focus,
+.header-nav__link:hover {
+  margin-bottom: 47px;
+  border-bottom: solid 3px;
+  border-color: #ff6b01;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .header-nav__link::after {
   position: absolute;
   left: 0;
@@ -123,17 +145,25 @@
 }
 
 .header-input {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  margin-top: 40px;
+  margin-top: 38px;
   border-bottom: 1px #ffffff solid;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 97px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
 }
 
 .input {
   outline: none;
   width: 100%;
-  display: block;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
@@ -148,7 +178,9 @@
 }
 
 .button {
-  display: flex;
+  width: 12px;
+  height: 12px;
+  display: inline-flex;
   background-image: url(../images/search.svg);
   background-color: transparent;
   color: transparent;
@@ -156,26 +188,18 @@
   background-position: center;
   background-size: contain;
   border: transparent;
+  cursor: pointer;
 }
-// .error {
-//   font-size: 14px;
-//   line-height: 16px;
-//   color: #ff001b;
-//   opacity: 1;
-// }
 
-// .is-hidden {
-//   opacity: 0;
-// }
 .theme_btn {
   position: absolute;
   top: 213px;
   right: 5%;
   width: 40px;
   height: 40px;
-  background-color:#676b69;
+  background-color: #676b69;
   box-shadow: 0 1px 10px 0 #261e1e;
-  border:none;
+  border: none;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -193,5 +217,5 @@
 }
 
 .color_white {
-  color:#ffffff;
+  color: #ffffff;
 }
