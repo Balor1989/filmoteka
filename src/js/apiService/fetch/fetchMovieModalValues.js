@@ -7,9 +7,10 @@ import Loading from '../../plugins/loading'
 
 export default async function fetchMoviesDetails(id) {
   Loading.pulse()
-    try { const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${refs.API_KEY}`);
-      rerenderMovieDetails(response.data)
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${refs.API_KEY}`);
       localStorage.setItem('movie', JSON.stringify(response.data))
+    rerenderMovieDetails(response.data)
       Loading.remove()
       console.log(response.data)
     }
