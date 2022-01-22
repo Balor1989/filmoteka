@@ -26,9 +26,9 @@ inputName.addEventListener('input', debounce( onFetchMovieByName, 300))
 
 // Search for popular films. 
 // Loads a list of movies on the main page and also adds genres to the "genres" variable
-function renderPopularMovies() {
-    fetchGenresOfMovie(API_KEY)
-    fetchPopularMovies(API_KEY, page)
+async function renderPopularMovies() {
+    await fetchGenresOfMovie(API_KEY)
+   await fetchPopularMovies(API_KEY, page)
 }
 
 export default renderPopularMovies
