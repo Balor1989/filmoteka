@@ -18,38 +18,38 @@ refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 refs.footerOpenModalBtn.addEventListener('click', onOpenModal);
 refs.footerCloseModalBtn.addEventListener('click', onCloseModal);
-refs.modal.addEventListener('click',  onModalWatchedBtn);
-refs.modal.addEventListener('click',  onModalQueueBtn);
+// refs.modal.addEventListener('click',  onModalWatchedBtn);
+// refs.modal.addEventListener('click',  onModalQueueBtn);
 
 
-function onModalWatchedBtn(e) {
- const onModalWatchedBtn = e.target.closest('.btn__watched')
- console.log(onModalWatchedBtn)
-  if (onModalWatchedBtn.textContent === "Add to watched") {
-    onModalWatchedBtn.innerHTML = "Remove from watched";
-    onModalWatchedBtn.style.backgroundColor = "rgb(255, 107, 1)";
-    onModalWatchedBtn.style.border = "none";
-  } else {
-    onModalWatchedBtn.innerHTML = "Add to watched";
-    onModalWatchedBtn.style.backgroundColor = "#FFFFFF";
-    onModalWatchedBtn.style.border = " 1px solid #000000";
+// function onModalWatchedBtn(e) {
+//  const onModalWatchedBtn = e.target.closest('.btn__watched')
+//  console.log(onModalWatchedBtn)
+//   if (onModalWatchedBtn.textContent === "Add to watched") {
+//     onModalWatchedBtn.innerHTML = "Remove from watched";
+//     onModalWatchedBtn.style.backgroundColor = "rgb(255, 107, 1)";
+//     onModalWatchedBtn.style.border = "none";
+//   } else {
+//     onModalWatchedBtn.innerHTML = "Add to watched";
+//     onModalWatchedBtn.style.backgroundColor = "#FFFFFF";
+//     onModalWatchedBtn.style.border = " 1px solid #000000";
   
-};
-}
-function onModalQueueBtn(e) {
-  const onModalQueueBtn = e.target.closest('.btn__queue')
-  console.log(onModalQueueBtn)
-  if (onModalQueueBtn.textContent === "Add to queue") {
-    onModalQueueBtn.innerHTML = "Remove from queue";
-    onModalQueueBtn.style.backgroundColor = "rgb(255, 107, 1)";
-    onModalQueueBtn.style.border = "none";
-  } else {
-    onModalQueueBtn.innerHTML  = "Add to queue";
-    onModalQueueBtn.style.backgroundColor = "#FFFFFF";
-    onModalQueueBtn.style.border = " 1px solid #000000";
-  }
+// };
+// }
+// function onModalQueueBtn(e) {
+//   const onModalQueueBtn = e.target.closest('.btn__queue')
+//   console.log(onModalQueueBtn)
+//   if (onModalQueueBtn.textContent === "Add to queue") {
+//     onModalQueueBtn.innerHTML = "Remove from queue";
+//     onModalQueueBtn.style.backgroundColor = "rgb(255, 107, 1)";
+//     onModalQueueBtn.style.border = "none";
+//   } else {
+//     onModalQueueBtn.innerHTML  = "Add to queue";
+//     onModalQueueBtn.style.backgroundColor = "#FFFFFF";
+//     onModalQueueBtn.style.border = " 1px solid #000000";
+//   }
 
-}
+// }
 
 
 function onOpenModal(e) {
@@ -69,20 +69,9 @@ function onOpenModal(e) {
   }
 
 
-function onCloseModal() {
-  document.body.style.overflow = ""
-  window.removeEventListener('keydown', onKeyEscPress);
-  if (!refs.backdrop.classList.contains('is-hidden')) {
-    refs.backdrop.classList.toggle('is-hidden')
-    return
-    }
-  if (!refs.footerModal.classList.contains('is-hidden')) {
-    refs.footerModal.classList.add('is-hidden')
-  }
-}
-
 function onChangeModal() {
   document.body.style.overflow = "";
+  localStorage.removeItem('movie')
   window.removeEventListener('keydown', onKeyEscPress);
   if (!refs.backdrop.classList.contains('is-hidden')) {
     refs.backdrop.classList.toggle('is-hidden')
