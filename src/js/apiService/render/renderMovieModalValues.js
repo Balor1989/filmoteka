@@ -17,7 +17,7 @@ export default function rerenderMovieDetails(response) {
 function onClickWatchedButton(e) {
     console.log('click Watched Button')
     const currentMovie = JSON.parse(localStorage.getItem('movie'))
-    const watchedMovies = JSON.parse(localStorage.getItem('watched')) || []
+    const watchedMovies = JSON.parse(localStorage.getItem('watched')) || [];
     console.log(watchedMovies)
     watchedMovies.push(currentMovie)
     localStorage.setItem('watched', JSON.stringify(watchedMovies))

@@ -1,14 +1,23 @@
 import refs from '../../refs/variables';
 import movieCard from '../../../templates/movieCard.hbs';
 import { genres } from '../fetch/fetchGenresOfMovie';
+import { Notify } from 'notiflix/build/notiflix-notify-aio'
+import pagination from '../../plugins/tui-pagination';
 
 const { rootEl } = refs;
+let totalResults = 20000;
 
 function renderMovies(response) {
     const data = response.data.results;
         //  Notify.success('Succes');
     console.log(genres);
-
+    if (!response.data.total_results) {
+         Notify.failure('No movies');
+    }
+    if (totalResults !== response.data.total_results) {
+        totalResults = response.data.total_results
+        pagination.reset(totalResults)
+    }
     const movies = data.map(
         (movie) => {
             const { release_date, poster_path, genre_ids } = movie;

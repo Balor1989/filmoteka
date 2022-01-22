@@ -14,12 +14,10 @@ const { API_KEY, inputName } = refs;
 const onFetchMovieByName = (e) => {
     if (!e.target.value) {
         fetchPopularMovies(API_KEY, page=1);
-        pagination.reset();
         return;
     }
     console.log(e.target.value)
     fetchMoviesByName(API_KEY, page=1, inputName.value)
-    pagination.reset();
     
 }
 
