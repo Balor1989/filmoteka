@@ -8,7 +8,12 @@ const refs = {
     inputName: document.querySelector('.input'),
     openModal: document.querySelector('.filmlist'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
-    footerOpenModalBtn: document.querySelector(".footer-box_line")
+    footerOpenModalBtn: document.querySelector(".footer-box_line"),
+    footerModal: document.querySelector(".overlay"),
+    backdrop: document.querySelector('[data-modal]'),
+    footerCloseModalBtn: document.querySelector('.close_modal_window'),
+    openWatchedList: document.querySelector('.watched-list'),
+    openQueueList: document.querySelector('.queue-list')
 };
 
 export default refs;

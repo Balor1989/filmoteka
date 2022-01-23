@@ -1,25 +1,20 @@
 import fetchMoviesDetails from "../apiService/fetch/fetchMovieModalValues";
-import ref  from '../refs/variables';
+import refs  from '../refs/variables';
 
 
-const { modalInfo, openModal,closeModalBtn, footerOpenModalBtn } = ref;
+const { modalInfo, openModal, closeModalBtn, footerOpenModalBtn, footerModal,
+  backdrop, footerCloseModalBtn, openWatchedList, openQueueList } = refs;
 
-const refs = {
-  backdrop: document.querySelector('[data-modal]'),
-  footerModal: document.querySelector(".overlay"),
-  footerCloseModalBtn: document.querySelector('.close_modal_window'),
-  openWatchedList: document.querySelector('.watched-list'),
-  openQueueList: document.querySelector('.queue-list')
-};
  
 // Hendlers
 openModal.addEventListener('click', onOpenModal);
-refs.openWatchedList.addEventListener('click', onOpenModal);
-refs.openQueueList.addEventListener('click', onOpenModal);
+openWatchedList.addEventListener('click', onOpenModal);
+openQueueList.addEventListener('click', onOpenModal);
 closeModalBtn.addEventListener('click', onCloseModal);
-refs.backdrop.addEventListener('click', onBackdropClick);
+backdrop.addEventListener('click', onBackdropClick);
+footerModal.addEventListener('click', onBackdropClick);
 footerOpenModalBtn.addEventListener('click', onOpenModal);
-refs.footerCloseModalBtn.addEventListener('click', onCloseModal);
+footerCloseModalBtn.addEventListener('click', onCloseModal);
 
 
 function onOpenModal(e) {
@@ -31,11 +26,11 @@ function onOpenModal(e) {
   };
 
   if (e.target === footerOpenModalBtn) {
-    refs.footerModal.classList.remove("is-hidden");
+    footerModal.classList.remove("is-hidden");
     return;
   };
 
-  refs.backdrop.classList.toggle('is-hidden');
+  backdrop.classList.toggle('is-hidden');
   let id = e.target.closest('.photo-card').getAttribute('id');
   fetchMoviesDetails(id);
   }
@@ -46,14 +41,14 @@ function onChangeModal() {
   localStorage.removeItem('movie');
   window.removeEventListener('keydown', onKeyEscPress);
 
-  if (!refs.backdrop.classList.contains('is-hidden')) {
-    refs.backdrop.classList.toggle('is-hidden');
+  if (!backdrop.classList.contains('is-hidden')) {
+    backdrop.classList.toggle('is-hidden');
     modalInfo.innerHTML = "";
     return;
   };
 
-  if (!refs.footerModal.classList.contains('is-hidden')) {
-    refs.footerModal.classList.add('is-hidden');
+  if (!footerModal.classList.contains('is-hidden')) {
+    footerModal.classList.add('is-hidden');
   };
 
 };
