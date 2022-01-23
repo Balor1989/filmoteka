@@ -1,3 +1,7 @@
+import movieLibraryCard from '../templates/movieLibraryCard.hbs'
+import renderLibraryMovies from './apiService/render/renderLibraryMovies';
+import pagination from './plugins/tui-pagination';
+
 const refs = {
   buttonLib: document.querySelector('.btn'),
   libraryHeader: document.querySelector('.library-page'),
@@ -19,7 +23,13 @@ function libraryClickBtn(e) {
   refs.libraryHeader.classList.remove('hidden')
   refs.mainLibrary.classList.remove('hidden')
   refs.mainHeader.classList.add('hidden')
-  refs.mainHome.classList.add('hidden') 
+  refs.mainHome.classList.add('hidden')
+
+  activeRenderWatchedMovies();
+  activeRenderQueueMovies()
+
+     // Disable pagination
+    pagination.reset(0);
 }
 
 function onButtonQueueClick() {
@@ -36,3 +46,19 @@ function onButtonWatchedClick() {
 }
 
 export default libraryClickBtn
+
+
+
+export function activeRenderQueueMovies() {
+  const queueMovies = JSON.parse(localStorage.getItem('queue'));
+  const renderQueueMovies = renderLibraryMovies(queueMovies).map(movieLibraryCard).join('');
+  refs.listQueue.innerHTML = "";
+  refs.listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies)
+};
+
+export function activeRenderWatchedMovies() {
+  const watchedMovies = JSON.parse(localStorage.getItem('watched'));
+  const renderWatchedMovies = renderLibraryMovies(watchedMovies).map(movieLibraryCard).join('');
+  refs.listWatched.innerHTML = "";
+   refs.listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies)
+};

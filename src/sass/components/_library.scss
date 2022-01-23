@@ -1,41 +1,4 @@
-.container-lbr {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100%;
-}
-a {
-  color: #ffffff;
-}
-.logo-section {
-  display: flex;
-  margin-top: 46px;
-}
-.logo-lbr {
-  padding-top: 5px;
-  margin-right: 10px;
-}
-.logo-name {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 35px;
-  align-items: center;
-  text-align: center;
-
-  color: #ffffff;
-  display: none;
-}
-.hidden {
-  display: none;
-}
-
-.header-lbr {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+.library-page {
   background-color: rgba(0, 0, 0, 0.56);
   background-image: linear-gradient(
       to right,
@@ -64,11 +27,11 @@ a {
   text-align: center;
 
   @media screen and (min-width: 480px) {
-    width: 480px;
+    // width: 480px;
   }
   @media screen and (min-width: 768px) {
     margin-bottom: 60px;
-    width: 768px;
+    // width: 768px;
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.5),
@@ -111,6 +74,45 @@ a {
     }
   }
 }
+.container-lbr {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+a {
+  color: #ffffff;
+}
+.logo-section {
+  display: flex;
+  margin-top: 46px;
+}
+.logo-lbr {
+  padding-top: 5px;
+  margin-right: 10px;
+}
+.logo-name {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+  display: none;
+}
+.hidden {
+  display: none;
+}
+
+.header-lbr {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
 .header-lbr__nav {
   margin: 0;
   display: flex;
@@ -144,7 +146,7 @@ a {
 .nav-link:focus,
 .nav-link:hover {
   margin-bottom: 47px;
-  border-bottom: solid 2px;
+  border-bottom: solid 3px;
   border-color: #ff6b01;
 }
 
@@ -189,7 +191,7 @@ a {
 }
 .active {
   margin-bottom: 47px;
-  border-bottom: solid 2px;
+  border-bottom: solid 3px;
   border-color: #ff6b01;
 }
 .is-active {

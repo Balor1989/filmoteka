@@ -2,10 +2,11 @@
 import Pagination from 'tui-pagination';
 
 const container = document.getElementById('pagination');
+
 const options = { // below default value of options
     totalItems: 20000,
      itemsPerPage: 20,
-     visiblePages: 7,
+     visiblePages: 5,
      page: 1,
      centerAlign: false,
      firstItemClassName: 'tui-first-child',
@@ -25,10 +26,11 @@ const options = { // below default value of options
              '<a href="#" class="tui-page-btnn tui-{{type}}-is-ellip">' +
                  '<span class="tui-ico-ellip">...</span>' +
              '</a>'
-     }
+    }
 };
 
 const pagination = new Pagination(container, options);
-export default pagination
+
+export default pagination;
 
 

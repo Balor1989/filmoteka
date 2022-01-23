@@ -1,6 +1,7 @@
-import { addBackToTop } from 'vanilla-back-to-top'
+import { addBackToTop } from 'vanilla-back-to-top';
 
- function backToTop() {
+function backToTop() {
+   
     addBackToTop({
   backgroundColor: '#ff6b018e',
   diameter: 60,
@@ -9,6 +10,8 @@ import { addBackToTop } from 'vanilla-back-to-top'
   scrollDuration: 700,
   showWhenScrollTopIs: 100,
   cornerOffset: 30,
-});
-}
-export default backToTop
+    });
+  
+};
+
+export default backToTop;
