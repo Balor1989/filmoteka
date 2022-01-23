@@ -37,6 +37,7 @@ export default renderPopularMovies
 
 function usePagination(event) {
     page = event.page;
+    console.log(event)
     if (inputName.value) {
         fetchMoviesByName(API_KEY, page, inputName.value)
         return;
@@ -48,6 +49,11 @@ function usePagination(event) {
 
 
 pagination.on('afterMove', (event) => {
+
+        window.scroll({
+            top: 0,
+            behavior: "smooth"
+        })
 });
 
 pagination.on('beforeMove', (event) => {

@@ -44,6 +44,10 @@ function renderMovies(response) {
     const markup = movies.map(movieCard).join('');
     rootEl.innerHTML = '';
     rootEl.insertAdjacentHTML('beforeend', markup);
+    window.scrollBy({
+        top: 0,
+        behavior: "smooth",
+    });
 }
 
 export default renderMovies;
