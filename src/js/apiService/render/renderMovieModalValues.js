@@ -1,4 +1,5 @@
 import movieDetailsTpl from '../../../templates/modal-movieDetails.hbs';
+import { activeRenderQueueMovies, activeRenderWatchedMovies } from '../../library';
 import refs  from '../../refs/variables';
 
 
@@ -36,12 +37,13 @@ function onClickWatchedButton(e) {
     if (watchedMovies.find(watchedMovie => watchedMovie.id === currentMovie.id)) {
         
         localStorage.setItem('watched', JSON.stringify(watchedMovies.filter(watchedMovie => watchedMovie.id !== currentMovie.id)));
+        activeRenderWatchedMovies()
         return;
     }
     
     watchedMovies.push(currentMovie);
-
     localStorage.setItem('watched', JSON.stringify(watchedMovies));
+    activeRenderWatchedMovies()
 }
 
 
@@ -58,10 +60,10 @@ function onClickQueueButton(e) {
     if (queueMovies.find(queueMovie => queueMovie.id === currentMovie.id)) {
         
         localStorage.setItem('queue', JSON.stringify(queueMovies.filter(queueMovie => queueMovie.id !== currentMovie.id)));
+        activeRenderQueueMovies()
         return;
     }
-
     queueMovies.push(currentMovie);
-
     localStorage.setItem('queue', JSON.stringify(queueMovies));
+    activeRenderQueueMovies()
 }

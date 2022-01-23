@@ -23,17 +23,9 @@ function libraryClickBtn(e) {
   refs.mainLibrary.classList.remove('hidden')
   refs.mainHeader.classList.add('hidden')
   refs.mainHome.classList.add('hidden')
-  const watchedMovies = JSON.parse(localStorage.getItem('watched'));
-  const queueMovies = JSON.parse(localStorage.getItem('queue'));
 
-  const renderWatchedMovies = renderLibraryMovies(watchedMovies).map(movieLibraryCard).join('');
-  const renderQueueMovies = renderLibraryMovies(queueMovies).map(movieLibraryCard).join('');
-
-  refs.listWatched.innerHTML = "";
-  refs.listQueue.innerHTML = "";
-  
-  refs.listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies)
-  refs.listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies)
+  activeRenderWatchedMovies();
+  activeRenderQueueMovies()
 }
 
 function onButtonQueueClick() {
@@ -50,3 +42,19 @@ function onButtonWatchedClick() {
 }
 
 export default libraryClickBtn
+
+
+
+export function activeRenderQueueMovies() {
+  const queueMovies = JSON.parse(localStorage.getItem('queue'));
+  const renderQueueMovies = renderLibraryMovies(queueMovies).map(movieLibraryCard).join('');
+  refs.listQueue.innerHTML = "";
+  refs.listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies)
+};
+
+export function activeRenderWatchedMovies() {
+  const watchedMovies = JSON.parse(localStorage.getItem('watched'));
+  const renderWatchedMovies = renderLibraryMovies(watchedMovies).map(movieLibraryCard).join('');
+  refs.listWatched.innerHTML = "";
+   refs.listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies)
+};
