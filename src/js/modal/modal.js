@@ -15,6 +15,7 @@ const refs = {
   openQueueList: document.querySelector('.queue-list')
 };
  
+// Hendlers
 refs.openModal.addEventListener('click', onOpenModal);
 refs.openWatchedList.addEventListener('click', onOpenModal);
 refs.openQueueList.addEventListener('click', onOpenModal);

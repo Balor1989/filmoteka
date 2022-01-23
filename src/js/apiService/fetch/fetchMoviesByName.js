@@ -4,20 +4,27 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import renderMovies from '../render/renderMovies'
 
 
+// Runs a query to get a list of movies by query.
+//Renders the result to the page
 async function fetchMoviesByName(api, page,inputName) {
 
     try {
-        Loading.pulse()
+        Loading.pulse();
+
         const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${api}&query=${inputName}&page=${page}`);
-        renderMovies(response)
-        Loading.remove()
+
+        renderMovies(response);
+
+        Loading.remove();
     }
         catch (error) {
         Notify.failure(`${error}`);
-        Loading.remove()
+
+        Loading.remove();
+
         return Promise.reject(error);
     };  
 
 };
 
-export default fetchMoviesByName
+export default fetchMoviesByName;
