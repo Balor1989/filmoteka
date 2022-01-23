@@ -10,13 +10,14 @@ let totalResults = 20000;
 function renderMovies(response) {
     const data = response.data.results;
         //  Notify.success('Succes');
-    console.log(genres);
+    
     if (!response.data.total_results) {
          Notify.failure('No movies');
     }
     if (totalResults !== response.data.total_results) {
-        totalResults = response.data.total_results
-        pagination.reset(totalResults)
+        totalResults = response.data.total_results;
+
+        pagination.reset(totalResults);
     }
     const movies = data.map(
         (movie) => {
@@ -25,10 +26,10 @@ function renderMovies(response) {
             let date = release_date;
 
             if (genresID && genresID.length > 2) {
-                genresID.splice(2, 5, "other")
+                genresID.splice(2, 5, "other");
             };
             if (date) {
-                date = release_date.slice(0, 4)
+                date = release_date.slice(0, 4);
             };
 
             let genresOfMovie = genresID.map(id => id === "other" ? 'Other' : genres[id]).join(', ');

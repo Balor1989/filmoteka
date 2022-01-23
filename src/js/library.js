@@ -1,5 +1,6 @@
 import movieLibraryCard from '../templates/movieLibraryCard.hbs'
 import renderLibraryMovies from './apiService/render/renderLibraryMovies';
+import pagination from './plugins/tui-pagination';
 
 const refs = {
   buttonLib: document.querySelector('.btn'),
@@ -26,6 +27,9 @@ function libraryClickBtn(e) {
 
   activeRenderWatchedMovies();
   activeRenderQueueMovies()
+
+     // Disable pagination
+    pagination.reset(0);
 }
 
 function onButtonQueueClick() {
