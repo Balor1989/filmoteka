@@ -1,7 +1,7 @@
 import pagination from "../../plugins/tui-pagination";
 
 function renderLibraryMovies(array) {
-    pagination.reset(array.length)
+    pagination.reset(0)
     const movies = array.map(
         (movie) => {
             const { release_date, genres } = movie;
@@ -12,16 +12,19 @@ function renderLibraryMovies(array) {
                 genresValue.splice(2, 6)
                 genresValue.push({ id: 'other', name: 'Other' })
             };
-
+            if (genres.length === 0) {
+                genresValue.push({ id: 'other', name: 'Other' })
+            };
             if (date) {
                 date = release_date.slice(0, 4)
             };
             return {
                 ...movie,
                 release_date: date || 'unknown year',
-                genres: genresValue || 'other'
+                genres: genresValue
             };
         });
+    console.log(movies)
     return movies;
 }
 
