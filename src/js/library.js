@@ -1,3 +1,5 @@
+import movieLibraryCard from '../templates/movieLibraryCard.hbs'
+
 const refs = {
   buttonLib: document.querySelector('.btn'),
   libraryHeader: document.querySelector('.library-page'),
@@ -19,7 +21,13 @@ function libraryClickBtn(e) {
   refs.libraryHeader.classList.remove('hidden')
   refs.mainLibrary.classList.remove('hidden')
   refs.mainHeader.classList.add('hidden')
-  refs.mainHome.classList.add('hidden') 
+  refs.mainHome.classList.add('hidden')
+  const watchedMovies = JSON.parse(localStorage.getItem('watched'));
+   const queueMovies = JSON.parse(localStorage.getItem('queue'));
+  const renderWatchedMovies = watchedMovies.map(movieLibraryCard).join('')
+  const renderQueueMovies = queueMovies.map(movieLibraryCard).join('')
+  refs.listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies)
+  refs.listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies)
 }
 
 function onButtonQueueClick() {
