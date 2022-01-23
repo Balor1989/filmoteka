@@ -1,6 +1,7 @@
-
+import pagination from "../../plugins/tui-pagination";
 
 function renderLibraryMovies(array) {
+    pagination.reset(array.length)
     const movies = array.map(
         (movie) => {
             const { release_date, genres } = movie;
