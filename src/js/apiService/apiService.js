@@ -7,7 +7,8 @@ import pagination from '../plugins/tui-pagination';
 
 
 const { API_KEY, inputName } = refs;
-export let page = 1;
+
+export let page = 1; // Starting page value for movie search.
 
 
 // Search movies by user request
@@ -18,8 +19,7 @@ const onFetchMovieByName = (e) => {
         return;
     };
 
-    fetchMoviesByName(API_KEY, page = 1, inputName.value);
-    
+    fetchMoviesByName(API_KEY, page = 1, inputName.value);  
 };
 
 // Handlers

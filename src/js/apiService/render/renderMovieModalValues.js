@@ -1,6 +1,7 @@
 import movieDetailsTpl from '../../../templates/modal-movieDetails.hbs';
-import { activeRenderQueueMovies, activeRenderWatchedMovies } from '../../library';
-import refs  from '../../refs/variables';
+import refs from '../../refs/variables';
+import onClickWatchedButton from '../../modal/onClickWatchedButton';
+import onClickQueueButton from '../../modal/onClickQueueButton';
 
 
 const { modalInfo } = refs;
@@ -15,66 +16,19 @@ export default function rerenderMovieDetails(response) {
     const currentMovie = JSON.parse(localStorage.getItem('movie'));
     const watchedMovies = JSON.parse(localStorage.getItem('watched')) || [];
     const queueMovies = JSON.parse(localStorage.getItem('queue')) || [];
-
+    
+    // Changes the button to "Remove from Watched" if the movie is already in the storage.
     if (watchedMovies.find(watchedMovie => watchedMovie.id === currentMovie.id)) {
         modalWatchedButton.classList.add('btn__watched--active');
     };
-
+    
+    // Changes the button to "Remove from Queue" if the movie is already in the storage.
     if (queueMovies.find(queueMovie => queueMovie.id === currentMovie.id)) {
         modalQueueButton.classList.add('btn__queue--active');
     };
     
-    //Handlers
+    // Buttons handlers
     modalWatchedButton.addEventListener('click', onClickWatchedButton);
     modalQueueButton.addEventListener('click', onClickQueueButton);
 };
 
-
-
-function onClickWatchedButton(e) {
-
-    this.classList.toggle('btn__watched--active');
-
-    const currentMovie = JSON.parse(localStorage.getItem('movie'));
-    const watchedMovies = JSON.parse(localStorage.getItem('watched')) || [];
-
-    if (watchedMovies.find(watchedMovie => watchedMovie.id === currentMovie.id)) {
-        
-        localStorage.setItem('watched', JSON.stringify(watchedMovies.filter(watchedMovie => watchedMovie.id !== currentMovie.id)));
-
-        activeRenderWatchedMovies();
-
-        return;
-    }
-    
-    watchedMovies.push(currentMovie);
-
-    localStorage.setItem('watched', JSON.stringify(watchedMovies));
-
-    activeRenderWatchedMovies();
-}
-
-
-
-function onClickQueueButton(e) {
-
-    this.classList.toggle('btn__queue--active');
-
-    const currentMovie = JSON.parse(localStorage.getItem('movie'));
-    const queueMovies = JSON.parse(localStorage.getItem('queue')) || [];
- 
-
-    if (queueMovies.find(queueMovie => queueMovie.id === currentMovie.id)) {
-        
-        localStorage.setItem('queue', JSON.stringify(queueMovies.filter(queueMovie => queueMovie.id !== currentMovie.id)));
-
-        activeRenderQueueMovies();
-
-        return;
-    }
-    queueMovies.push(currentMovie);
-
-    localStorage.setItem('queue', JSON.stringify(queueMovies));
-
-    activeRenderQueueMovies();
-}
