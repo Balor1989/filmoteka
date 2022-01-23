@@ -1,4 +1,5 @@
 import movieLibraryCard from '../templates/movieLibraryCard.hbs'
+import renderLibraryMovies from './apiService/render/renderLibraryMovies';
 
 const refs = {
   buttonLib: document.querySelector('.btn'),
@@ -23,9 +24,11 @@ function libraryClickBtn(e) {
   refs.mainHeader.classList.add('hidden')
   refs.mainHome.classList.add('hidden')
   const watchedMovies = JSON.parse(localStorage.getItem('watched'));
-   const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  const renderWatchedMovies = watchedMovies.map(movieLibraryCard).join('')
-  const renderQueueMovies = queueMovies.map(movieLibraryCard).join('')
+  const queueMovies = JSON.parse(localStorage.getItem('queue'));
+
+  const renderWatchedMovies = renderLibraryMovies(watchedMovies).map(movieLibraryCard).join('');
+  const renderQueueMovies = renderLibraryMovies(queueMovies).map(movieLibraryCard).join('');
+
   refs.listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies)
   refs.listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies)
 }
