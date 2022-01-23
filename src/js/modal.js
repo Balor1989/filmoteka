@@ -11,9 +11,13 @@ const refs = {
   footerModal: document.querySelector(".overlay"),
   footerOpenModalBtn: document.querySelector(".footer-box_line"),
   footerCloseModalBtn: document.querySelector('.close_modal_window'),
+  openWatchedList: document.querySelector('.watched-list'),
+  openQueueList: document.querySelector('.queue-list')
 };
  
 refs.openModal.addEventListener('click', onOpenModal);
+refs.openWatchedList.addEventListener('click', onOpenModal);
+refs.openQueueList.addEventListener('click', onOpenModal);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 refs.footerOpenModalBtn.addEventListener('click', onOpenModal);
