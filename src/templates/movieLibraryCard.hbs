@@ -8,8 +8,8 @@
 	{{/if}}
 <h2 class="film-discription film-title">{{original_title}}</h2>
  {{#each genres}}
-  <span class="modal__genre">{{this.name}}</span>
+  <span class="film-discription film-details">{{this.name}}
  {{/each}}
-<p class="film-discription film-details">{{genre_ids}} | {{release_date}}
-<span  class="film-discription film-reiting">{{vote_average}}</span></p>
+{{genre_ids}} | {{release_date}}</span>
+<span  class="film-discription film-reiting">{{vote_average}}</span>
 </li>
