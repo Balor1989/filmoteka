@@ -5,7 +5,7 @@ const container = document.getElementById('pagination');
 const options = { // below default value of options
     totalItems: 20000,
      itemsPerPage: 20,
-     visiblePages: 7,
+     visiblePages: 5,
      page: 1,
      centerAlign: false,
      firstItemClassName: 'tui-first-child',

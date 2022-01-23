@@ -29,6 +29,9 @@ function libraryClickBtn(e) {
   const renderWatchedMovies = renderLibraryMovies(watchedMovies).map(movieLibraryCard).join('');
   const renderQueueMovies = renderLibraryMovies(queueMovies).map(movieLibraryCard).join('');
 
+  refs.listWatched.innerHTML = "";
+  refs.listQueue.innerHTML = "";
+  
   refs.listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies)
   refs.listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies)
 }
