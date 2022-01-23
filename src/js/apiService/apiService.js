@@ -50,10 +50,10 @@ function usePagination(event) {
 
 pagination.on('afterMove', (event) => {
 
-        window.scroll({
-            top: 0,
-            behavior: "smooth"
-        })
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
 
 pagination.on('beforeMove', (event) => {
