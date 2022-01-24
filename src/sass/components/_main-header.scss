@@ -4,8 +4,10 @@ button {
 }
 
 .section-header {
-  padding: 0;
-  margin: 0;
+  margin-bottom: 20px;
+  height: 230px;
+  padding: 46px 0px 97px 0px;
+
   margin-left: auto;
   margin-right: auto;
   background-image: url(../images/logo_mob_1x.jpg);
@@ -19,6 +21,7 @@ button {
   }
 
   @media screen and (min-width: 768px) {
+    margin-bottom: 60px;
     background-image: url(../images/logo_tabl_1x.jpg);
 
     @media (min-resolution: 2dppx) {
@@ -36,19 +39,17 @@ button {
 }
 
 .container {
-  max-width: 320px;
+  max-width: 480px;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
-  margin-bottom: 20px;
 
   @media screen and (min-width: 768px) {
     max-width: 768px;
     padding-left: 71px;
     padding-right: 71px;
-    margin-bottom: 60px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -59,28 +60,27 @@ button {
 }
 
 .header {
-  position: relative;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .logo {
+  margin-right: 4px;
+
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  // position: absolute;
-  // top: 46px;
-  // left: 0px;
 }
 
 .logo__img {
+  margin-top: 0px;
   display: inline-block;
 }
 
 .logo-text {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 6px;
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;
@@ -92,6 +92,7 @@ button {
 }
 
 .header-nav {
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -101,7 +102,9 @@ button {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  margin-top: 58px;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .header-nav__item:not(:last-child) {
@@ -109,8 +112,7 @@ button {
 }
 
 .header-nav__link {
-  position: relative;
-
+  padding: 0;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
@@ -120,21 +122,16 @@ button {
 
 .header-nav__link:focus,
 .header-nav__link:hover {
-  margin-bottom: 47px;
   border-bottom: solid 3px;
+  margin-bottom: -3px;
   border-color: #ff6b01;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-nav__link::after {
-  position: absolute;
   left: 0;
-  bottom: -3px;
-  content: '';
   display: block;
   width: 100%;
-  height: 3px;
-
   background-color: #ff6b08;
   opacity: 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -152,7 +149,6 @@ button {
   border-bottom: 1px #ffffff solid;
   justify-content: center;
   align-items: center;
-  margin-bottom: 97px;
   width: 100%;
 
   @media screen and (min-width: 768px) {

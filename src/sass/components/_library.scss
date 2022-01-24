@@ -25,6 +25,7 @@
   max-width: 100%;
   height: 230px;
   text-align: center;
+  padding: 46px 0px 65px 0px;
   margin-bottom: 20px;
 
   @media screen and (min-width: 480px) {
@@ -87,11 +88,12 @@ a {
 }
 .logo-section {
   display: flex;
-  margin-top: 46px;
 }
 .logo-lbr {
-  padding-top: 5px;
+  padding: 0;
+  margin: 0;
   margin-right: 10px;
+  margin-bottom: 3px;
 }
 .logo-name {
   font-family: Roboto;
@@ -99,8 +101,6 @@ a {
   font-weight: 500;
   font-size: 30px;
   line-height: 35px;
-  align-items: center;
-  text-align: center;
 
   color: #ffffff;
   display: none;
@@ -112,7 +112,6 @@ a {
 .header-lbr {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
 }
 .header-lbr__nav {
   margin: 0;
@@ -120,8 +119,9 @@ a {
   justify-content: space-between;
 }
 .header-lbr__nav-links {
+  padding-top: 10px;
   margin: 0;
-  margin-top: 58px;
+
   display: flex;
   list-style: none;
 }
@@ -133,10 +133,11 @@ a {
   line-height: 14px;
 
   display: flex;
+
   align-items: center;
   text-align: center;
   text-transform: uppercase;
-
+  margin-top: 4px;
   margin-right: 39px;
   margin-bottom: 49px;
   color: white;
@@ -209,13 +210,16 @@ a {
   .button-lbr {
     width: 136px;
   }
+  .nav-link {
+    margin-top: 10px;
+  }
   .logo-name {
     display: block;
   }
   .container-lbr {
     width: 768px;
-    padding-left: 75px;
-    padding-right: 75px;
+    padding-left: 71px;
+    padding-right: 71px;
   }
 }
 
