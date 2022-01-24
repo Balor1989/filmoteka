@@ -1,4 +1,4 @@
-import { activeRenderQueueMovies } from "../library/library";
+import activeRenderQueueMovies from "../library/activeRenderQueueMovies";
 
 // By clicking on the button, adds the current movie to the local-storage.
 function onClickQueueButton(e) {
