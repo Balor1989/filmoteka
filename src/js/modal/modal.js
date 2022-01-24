@@ -3,9 +3,8 @@ import refs  from '../refs/variables';
 
 
 const { modalInfo, openModal, closeModalBtn, footerOpenModalBtn, footerModal,
-  backdrop, footerCloseModalBtn, openWatchedList, openQueueList } = refs;
+  backdrop, footerCloseModalBtn, openWatchedList, openQueueList, footerBoxIcon } = refs;
 
- 
 // Hendlers
 openModal.addEventListener('click', onOpenModal);
 openWatchedList.addEventListener('click', onOpenModal);
@@ -19,6 +18,7 @@ footerCloseModalBtn.addEventListener('click', onCloseModal);
 
 function onOpenModal(e) {
   document.body.style.overflow = "hidden";
+  footerBoxIcon.style.animation = 'none';
   window.addEventListener('keydown', onKeyEscPress);
 
   if (e.target.nodeName === 'UL')  {
@@ -39,6 +39,7 @@ function onOpenModal(e) {
 function onChangeModal() {
   document.body.style.overflow = "";
   localStorage.removeItem('movie');
+  footerBoxIcon.style.animation = 'pulse 1s ease-in-out infinite'
   window.removeEventListener('keydown', onKeyEscPress);
 
   if (!backdrop.classList.contains('is-hidden')) {

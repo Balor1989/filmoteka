@@ -18,6 +18,7 @@ const refs = {
     openModal: document.querySelector('.filmlist'),
     openWatchedList: document.querySelector('.watched-list'),
     openQueueList: document.querySelector('.queue-list'),
+    footerBoxIcon: document.querySelector('.footer-box_icon'),
     
     //Sarch form variables
     btnSearch: document.querySelector('.button'),
