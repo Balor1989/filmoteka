@@ -162,6 +162,7 @@ a {
   background-color: transparent;
 }
 .button-lbr {
+  cursor: pointer;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
@@ -182,6 +183,7 @@ a {
   width: 129px;
   height: 44px;
   margin-right: 20px;
+  transition: background-color 250ms $timer-function;
 }
 
 .button-lbr:last-child {
