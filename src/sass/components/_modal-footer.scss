@@ -20,8 +20,6 @@
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  // z-index: 100;
-
   max-width: 800px;
   max-height: 700px;
   left: 50%;
@@ -133,8 +131,6 @@
     padding-top: 15px;
     color: #180d06;
     @media screen and (max-width: 772px) {
-      display: flex;
-      flex-direction: column;
       font-weight: 400;
       font-size: 16px;
       line-height: 1.1;
@@ -144,6 +140,7 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
+    max-height: 280px;
     padding: 0;
   }
   &_work {
@@ -193,8 +190,6 @@
 }
 
 .review-section_card {
-  // background-color: rgba(110, 97, 45, 0.295);
-  // border-radius: 15px;
   margin-left: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
