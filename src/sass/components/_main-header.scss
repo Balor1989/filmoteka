@@ -172,6 +172,9 @@ button {
 .input::placeholder {
   color: #ffffff;
 }
+.input:focus::placeholder {
+  color: transparent;
+}
 
 .header__search-icon {
   width: 12px;
