@@ -13,6 +13,38 @@
   opacity: 0;
   pointer-events: none;
 }
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+}
+.close_modal_window {
+  padding: 0px;
+  display: flex;
+}
+.button-footer__icon {
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+}
+
+.button-footer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  background: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+}
+.button-footer:hover {
+  color: #ff6b08;
+}
 .modal-footer {
   position: absolute;
   display: flex;
@@ -54,6 +86,14 @@
     padding-left: 30px;
     padding-bottom: 50px;
     padding-right: 30px;
+  }
+  &_close {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+  }
+  &_icon {
+    background-color: black;
   }
 }
 

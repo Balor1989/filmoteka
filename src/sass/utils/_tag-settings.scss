@@ -19,7 +19,8 @@ a {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-image: url(../images/holiday-christmas-bg.png), linear-gradient(rgba(7,7,7, 0.8) 100%, transparent);
+  background-image: url(../images/holiday-christmas-bg.png),
+    linear-gradient(rgba(7, 7, 7, 0.8) 100%, transparent);
   margin: 0px;
   padding: 0px;
   position: relative;
@@ -44,5 +45,4 @@ p {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
 }
