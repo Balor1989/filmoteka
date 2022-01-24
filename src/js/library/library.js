@@ -1,10 +1,9 @@
 import activeRenderQueueMovies from './activeRenderQueueMovies';
 import activeRenderWatchedMovies from './activeRenderWatchedMovies';
-import pagination from '../plugins/tui-pagination';
 import refs from '../refs/variables';
 
 const { listWatched, listQueue, buttonLib, buttonQueue, buttonWatched,
-  libraryHeader, mainHeader, mainLibrary, mainHome } = refs;
+  libraryHeader, mainHeader, mainLibrary, mainHome, paginationBox } = refs;
 
 
 buttonLib.addEventListener('click', libraryClickBtn);
@@ -13,6 +12,8 @@ buttonWatched.addEventListener('click', onButtonWatchedClick);
 
 function libraryClickBtn(e) {
   e.preventDefault();
+
+  paginationBox.style.display = 'none'
   libraryHeader.classList.remove('hidden');
   mainLibrary.classList.remove('hidden');
   mainHeader.classList.add('hidden');
@@ -21,7 +22,6 @@ function libraryClickBtn(e) {
   activeRenderWatchedMovies();
   activeRenderQueueMovies();
 
-  pagination.reset(0);  // Disable pagination
 }
 
 function onButtonQueueClick() {

@@ -1,7 +1,8 @@
 
 import Pagination from 'tui-pagination';
+import refs from '../refs/variables';
 
-const container = document.getElementById('pagination');
+const { container } = refs;
 
 const options = { // below default value of options
     totalItems: 20000,

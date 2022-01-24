@@ -2,6 +2,10 @@ const refs = {
     API_KEY: '7f7f3cc03c05575ccb98184b93174d1e',
     rootEl: document.querySelector('.filmlist'),
 
+    // Pagination variables
+    container: document.getElementById('pagination'),
+    paginationBox:document.querySelector('.pagination-box'),
+
     // Modal variables
     modalInfo: document.querySelector('.modal__detail'),
     onModalWatchedBtn: document.querySelector('.btn__watched'),
