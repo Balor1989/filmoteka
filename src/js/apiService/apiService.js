@@ -23,7 +23,7 @@ const onFetchMovieByName = (e) => {
 };
 
 // Handlers
-inputName.addEventListener('input', debounce(onFetchMovieByName, 300));
+inputName.addEventListener('input', debounce(onFetchMovieByName, 1000));
 
 
 
