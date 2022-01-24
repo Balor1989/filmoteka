@@ -1,5 +1,5 @@
-import movieLibraryCard from '../../templates/movieLibraryCard.hbs';
-import renderLibraryMovies from '../apiService/render/renderLibraryMovies';
+import activeRenderQueueMovies from './activeRenderQueueMovies';
+import activeRenderWatchedMovies from './activeRenderWatchedMovies';
 import pagination from '../plugins/tui-pagination';
 import refs from '../refs/variables';
 
@@ -21,8 +21,7 @@ function libraryClickBtn(e) {
   activeRenderWatchedMovies();
   activeRenderQueueMovies();
 
-     // Disable pagination
-    pagination.reset(0);
+  pagination.reset(0);  // Disable pagination
 }
 
 function onButtonQueueClick() {
@@ -41,18 +40,3 @@ function onButtonWatchedClick() {
 
 export default libraryClickBtn;
 
-
-
-export function activeRenderQueueMovies() {
-  const queueMovies = JSON.parse(localStorage.getItem('queue'));
-  const renderQueueMovies = renderLibraryMovies(queueMovies).map(movieLibraryCard).join('');
-  listQueue.innerHTML = "";
-  listQueue.insertAdjacentHTML('afterbegin', renderQueueMovies);
-};
-
-export function activeRenderWatchedMovies() {
-  const watchedMovies = JSON.parse(localStorage.getItem('watched'));
-  const renderWatchedMovies = renderLibraryMovies(watchedMovies).map(movieLibraryCard).join('');
-  listWatched.innerHTML = "";
-  listWatched.insertAdjacentHTML('afterbegin', renderWatchedMovies);
-};
