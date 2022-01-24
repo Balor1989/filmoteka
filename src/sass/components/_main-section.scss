@@ -36,7 +36,6 @@
   height: 400px;
   width: 280px;
   border-radius: 5px;
-  margin-bottom: 10px;
 
   @media screen and(min-width:768px) {
     width: 294px;
@@ -57,6 +56,10 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
+}
+
+.film-discription-box {
+  padding-top: 10px;
 }
 
 .film-discription {
