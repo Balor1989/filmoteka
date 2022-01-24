@@ -1,4 +1,4 @@
-import { activeRenderWatchedMovies } from "../library";
+import { activeRenderWatchedMovies } from "../library/library";
 
 // By clicking on the button, adds the current movie to the local-storage.
 function onClickWatchedButton(e) {
