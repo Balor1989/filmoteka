@@ -2,7 +2,7 @@ import movieDetailsTpl from '../../../templates/modal-movieDetails.hbs';
 import refs from '../../refs/variables';
 import onClickWatchedButton from '../../modal/onClickWatchedButton';
 import onClickQueueButton from '../../modal/onClickQueueButton';
-import onClickPlayButton from '../../onClickPlayButton';
+import onClickPlayButton from '../fetch/fetchMovieTrailer';
 
 
 
