@@ -1,5 +1,6 @@
 const refs = {
     API_KEY: '7f7f3cc03c05575ccb98184b93174d1e',
+    TRAILER__PATH: 'https://www.youtube.com/embed/',
     rootEl: document.querySelector('.filmlist'),
 
     // Pagination variables

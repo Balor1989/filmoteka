@@ -1,35 +1,46 @@
 import trailerTpl from '../templates/trailer.hbs';
 import refs from '../js/refs/variables';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import Loading from '../js/plugins/loading';
+import axios from "axios";
 
 
-const TRAILER_BASE_URL = 'https://www.youtube.com/embed/';
+const { modalInfo, TRAILER__PATH, API_KEY } = refs;
 
 
-function onClickPlayButton() {
-  console.log('fetch');
-fetch("https://api.themoviedb.org/3/movie/tt9032400?api_key=7f7f3cc03c05575ccb98184b93174d1e&append_to_response=videos") .then(r => r.json()).then(data => console.log(data));
+async function onClickPlayButton() {
+  const id = JSON.parse(localStorage.getItem('movieID'));
+  Loading.pulse();
+   
+  try {
+    const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`);   
+    const trailerKey = response.data.videos.results[0].key || 'D3sg1sDhX0U';
+    renderPosts(trailerKey);
 
-  
-  // let path = TRAILER_BASE_URL;
-  // // console.log(videos.results.length);
-  // // if (this.videos.results.length !== 0)
-  // //   path = TRAILER_BASE_URL + videos.results.key[0];
-  // console.log('render');
+    Loading.remove();
+  }
+   
+    catch (error) {
+    Notify.failure(`Trailer was not found`);
+    
+    Loading.remove();
+
+    return Promise.reject(error);
+  };
+};
 
 
-}
 
 function renderPosts(data) {
-  console.log('RENDER')
-  
-//   const markup = TRAILER_BASE_URL + id.videos.results.key[0]
 
-//   modalInfo.innerHTML = '';
+  const path = { path: TRAILER__PATH + data };
 
-//   modalInfo.insertAdjacentHTML('beforeend', markup);
+  const markup = trailerTpl(path);
 
-//    modalInfo.insertAdjacentHTML('afterbegin', trailerTpl(id));
- 
+  modalInfo.innerHTML = '';
+
+  modalInfo.insertAdjacentHTML('afterbegin', markup);
+
 };
 
 export default onClickPlayButton;
