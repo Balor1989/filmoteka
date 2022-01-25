@@ -65,8 +65,8 @@
 
 .button-close {
   position: absolute;
-  right: 0;
-  top: 0;
+  left: 820px;
+  top: 10px;
   border: none;
   width: 30px;
   height: 30px;
@@ -254,6 +254,7 @@
   margin-bottom: 20px;
 
   @media screen and (min-width: 320px) {
+    margin: 0;
     font-size: 20px;
     line-height: 23px;
     margin-top: 30px;
@@ -324,7 +325,6 @@
   align-items: center;
   text-transform: uppercase;
   color: #000000;
-  margin-bottom: 10px;
 }
 .modal__description {
   font-family: Roboto;
@@ -333,7 +333,6 @@
   font-size: 12px;
   line-height: 20px;
   color: #000000;
-  margin-bottom: 21px;
 }
 .modal__main-info {
   display: flex;
