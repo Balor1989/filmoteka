@@ -15,7 +15,7 @@ footerModal.addEventListener('click', onBackdropClick);
 footerOpenModalBtn.addEventListener('click', onOpenModal);
 footerCloseModalBtn.addEventListener('click', onCloseModal);
 
-
+// Opens a modal window
 function onOpenModal(e) {
   document.body.style.overflow = "hidden";
   footerBoxIcon.style.animation = 'none';
@@ -35,7 +35,7 @@ function onOpenModal(e) {
   fetchMoviesDetails(id);
   }
 
-
+// Hides all modal options
 function onChangeModal() {
   document.body.style.overflow = "";
   localStorage.removeItem('movie');
@@ -54,16 +54,17 @@ function onChangeModal() {
 
 };
 
+// Closes modal window at the click of a button
 function onCloseModal() {
   onChangeModal();
 };
-
+// Closes modal window on press "Escape"
 function onKeyEscPress(e) {
   if (e.code === "Escape") {
     onChangeModal();
   };
 };
-
+// Closes modal window at the click of a "Overlay"
 function onBackdropClick(e) {
   if (e.target === e.currentTarget) {
     onChangeModal();
