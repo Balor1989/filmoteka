@@ -5,9 +5,9 @@ const colorFooter = document.querySelector('.footer');
 const frontendCard = document.querySelectorAll('.review-section_card');
 const colorPageBt = document.querySelectorAll('.tui-page-bt');
 
-themeBtn.addEventListener('click', changeTheme);
+themeBtn.addEventListener('click', changeTheme); // Listener on button change themes
 
-function changeTheme(){
+function changeTheme(){  // To add or remove topics by condition
     if(bodyColor.classList.contains('theme_btn-dark') == false) {
         changeThemeAdd()
     }
@@ -17,7 +17,7 @@ function changeTheme(){
     }
 }
 
-function changeThemeAdd() {
+function changeThemeAdd() {  // Adding a dark theme
     bodyColor.classList.add('theme_btn-dark');
         document.querySelector('.theme_icon').classList.add('theme_icon-dark');
         colorModal.style.background = '#555353';
@@ -29,10 +29,10 @@ function changeThemeAdd() {
         for(const colorPage of colorPageBt) {
             colorPage.style.color = '#fff';
         }
-        localStorage.setItem("theme","theme_btn-dark")
+        localStorage.setItem("theme","theme_btn-dark") // Saving topics in local storage
 }
 
-function changeThemeRemove() {
+function changeThemeRemove() { // Remove a dark theme
     bodyColor.classList.remove('theme_btn-dark');
     document.querySelector('.theme_icon').classList.remove('theme_icon-dark');
     colorModal.style.background = '#fff';
@@ -44,13 +44,15 @@ function changeThemeRemove() {
     for(const colorPage of colorPageBt) {
         colorPage.style.color = '#000';
     }
-    localStorage.setItem("theme", "whiteTheme")
+    localStorage.setItem("theme", "whiteTheme") // Saving topics in local storage
 }
 
 const blackTh = (localStorage.getItem("theme"))   
 const whiteTh = JSON.parse(localStorage.getItem("whiteTheme"))
         
 window.onload = loc;
+
+// Checking local storage for saved themes, applying them when opening or reloading the page
 function loc() {
     if(localStorage.getItem("theme") == "theme_btn-dark"){
         changeThemeAdd()
