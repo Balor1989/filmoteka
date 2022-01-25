@@ -1,11 +1,11 @@
-import trailerTpl from '../templates/trailer.hbs';
-import refs from '../js/refs/variables';
+import refs from '../../refs/variables';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import Loading from '../js/plugins/loading';
+import Loading from '../../plugins/loading';
+import renderPosts from '../render/renderTrailer';
 import axios from "axios";
 
 
-const { modalInfo, TRAILER__PATH, API_KEY } = refs;
+const { API_KEY } = refs;
 
 // Makes a request to get a movie with a list of trailers
 async function onClickPlayButton() {
@@ -14,13 +14,15 @@ async function onClickPlayButton() {
    
   try {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`);   
-    console.log(response.data.videos.results.length)
+   
+    // If the trailer is not found - returns the default video.
     if (response.data.videos.results.length === 0) {
-      
       renderPosts('FikZVa2wt2U');  // default trailer
+      
       Loading.remove();
       return;
-    }
+      };
+
     const trailerKey = response.data.videos.results[0].key;
     renderPosts(trailerKey);
 
@@ -34,20 +36,6 @@ async function onClickPlayButton() {
 
     return Promise.reject(error);
   };
-};
-
-
-// Renders a window with a movie trailer on "YouTube"
-function renderPosts(data) {
-
-  const path = { path: TRAILER__PATH + data };
-
-  const markup = trailerTpl(path);
-
-  modalInfo.innerHTML = '';
-
-  modalInfo.insertAdjacentHTML('afterbegin', markup);
-
 };
 
 export default onClickPlayButton;
