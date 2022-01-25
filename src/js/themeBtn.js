@@ -20,11 +20,7 @@ function changeTheme(){
 function changeThemeAdd() {
     bodyColor.classList.add('theme_btn-dark');
         document.querySelector('.theme_icon').classList.add('theme_icon-dark');
-        let colorText = document.querySelectorAll('.film-title');
-        for(const listItem of colorText) {
-            listItem.classList.add('color_white')
-        }
-        colorModal.style.background = '#2b2d30';
+        colorModal.style.background = '#555353';
         colorFooter.style.background = '#2b2d30';
         document.querySelector('.modal_content').style.background = "#8f8f8f";
         for(const listFrontend of frontendCard) {
@@ -33,17 +29,12 @@ function changeThemeAdd() {
         for(const colorPage of colorPageBt) {
             colorPage.style.color = '#fff';
         }
-        // localStorage.setItem("blackTheme", JSON.stringify("changeThemeAdd()"))
         localStorage.setItem("theme","theme_btn-dark")
 }
 
 function changeThemeRemove() {
     bodyColor.classList.remove('theme_btn-dark');
     document.querySelector('.theme_icon').classList.remove('theme_icon-dark');
-    let colorText = document.querySelectorAll('.film-title');
-    for(const listItems of colorText) {
-        listItems.classList.remove('color_white')
-    }
     colorModal.style.background = '#fff';
     colorFooter.style.background = '#f7f7f7';
     document.querySelector('.modal_content').style.background = "#fff";
@@ -53,7 +44,6 @@ function changeThemeRemove() {
     for(const colorPage of colorPageBt) {
         colorPage.style.color = '#000';
     }
-    // localStorage.setItem("whiteTheme", JSON.stringify("changeThemeRemove()"))
     localStorage.setItem("theme", "whiteTheme")
 }
 
