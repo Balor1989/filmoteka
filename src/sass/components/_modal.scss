@@ -255,24 +255,20 @@
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
+  // line-height: 14px;
   display: flex;
   align-items: center;
   color: #000000;
 }
 .modal__info-color {
   min-width: 36px;
-  min-height: 16px;
   background: #ff6b01;
   border-radius: 5px;
-  align-items: center;
   text-align: center;
-  justify-content: center;
 }
 .modal__info-light {
   min-width: 36px;
-  min-height: 16px;
-  background: #f7f7f7;
+  background: transparent;
   border-radius: 5px;
   align-items: center;
   text-align: center;
