@@ -1,12 +1,18 @@
 {{#if poster_path}}
 
-<button class="play_trailer" aria-label='play trailer'> PLAY </button>
+<div class="modal__poster"><button class="play_trailer" aria-label='play trailer'> 
+<svg
+	 width="50px"  viewBox="0 0 260 180" enable-background="new 0 0 260 180" xml:space="preserve">
+<path d="M220,2H40C19.01,2,2,19.01,2,40v100c0,20.99,17.01,38,38,38h180c20.99,0,38-17.01,38-38V40C258,19.01,240.99,2,220,2z
+	 M102,130V50l68,40L102,130z"/>
+</svg>
+</button>
 
 		<img class="modal__img"  srcset=" https://image.tmdb.org/t/p/w500{{poster_path}} 1x,
  				https://image.tmdb.org/t/p/original{{poster_path}} 2x" src='https://image.tmdb.org/t/p/w300{{poster_path}}'
-				alt="{{original_title}}" loading="lazy">
+				alt="{{original_title}}" loading="lazy"></div>
 	{{else}}
-		<img class="modal__img"  src='https://cdn.pixabay.com/photo/2016/03/31/18/36/cinema-1294496_1280.png' alt="default photo">
+		<div class="modal__poster"><img class="modal__img"  src='https://cdn.pixabay.com/photo/2016/03/31/18/36/cinema-1294496_1280.png' alt="default photo"></div>
 	{{/if}}
         <div class="modal__all-info">
             <h2 class="modal__title">{{original_title}}</h2>
