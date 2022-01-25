@@ -8,7 +8,7 @@ import pagination from '../plugins/tui-pagination';
 
 const { API_KEY, inputName } = refs;
 
-export let page = 1; // Starting page value for movie search.
+export let page = JSON.parse(localStorage.getItem('page')) || 1; // Starting page value for movie search.
 
 
 // Search movies by user request
@@ -19,7 +19,7 @@ const onFetchMovieByName = (e) => {
         return;
     };
 
-    fetchMoviesByName(API_KEY, page = 1, inputName.value);  
+    fetchMoviesByName(API_KEY, page = 1, inputName.value);
 };
 
 // Handlers
@@ -39,15 +39,16 @@ async function renderPopularMovies() {
 
 // If the input value is 'false' - renders popular movies, otherwise - movies on demand
 function usePagination(event) {
-    page = event.page;
+    // page = event.page;
+    localStorage.setItem('page', JSON.stringify(event.page))
 
     if (inputName.value) {
-        fetchMoviesByName(API_KEY, page, inputName.value);
+        fetchMoviesByName(API_KEY, event.page, inputName.value);
         return;
     };
 
     if (!inputName.value) {
-        fetchPopularMovies(API_KEY, page);
+        fetchPopularMovies(API_KEY, event.page);
     };
 };
 
