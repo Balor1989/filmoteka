@@ -3,12 +3,12 @@ import Pagination from 'tui-pagination';
 import refs from '../refs/variables';
 
 const { container } = refs;
-
+const page = JSON.parse(localStorage.getItem('page')) || 1
 const options = { // below default value of options
     totalItems: 20000,
      itemsPerPage: 20,
      visiblePages: 5,
-     page: 1,
+     page: page,
      centerAlign: false,
      firstItemClassName: 'tui-first-child',
      lastItemClassName: 'tui-last-child',
