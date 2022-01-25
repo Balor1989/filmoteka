@@ -2,6 +2,8 @@ import movieDetailsTpl from '../../../templates/modal-movieDetails.hbs';
 import refs from '../../refs/variables';
 import onClickWatchedButton from '../../modal/onClickWatchedButton';
 import onClickQueueButton from '../../modal/onClickQueueButton';
+import onClickPlayButton from '../../onClickPlayButton';
+
 
 
 const { modalInfo } = refs;
@@ -16,6 +18,7 @@ export default function rerenderMovieDetails(response) {
     const currentMovie = JSON.parse(localStorage.getItem('movie'));
     const watchedMovies = JSON.parse(localStorage.getItem('watched')) || [];
     const queueMovies = JSON.parse(localStorage.getItem('queue')) || [];
+    const modalPlayButton = document.querySelector('.play_trailer');
     
     // Changes the button to "Remove from Watched" if the movie is already in the storage.
     if (watchedMovies.find(watchedMovie => watchedMovie.id === currentMovie.id)) {
@@ -30,5 +33,6 @@ export default function rerenderMovieDetails(response) {
     // Buttons handlers
     modalWatchedButton.addEventListener('click', onClickWatchedButton);
     modalQueueButton.addEventListener('click', onClickQueueButton);
+    modalPlayButton.addEventListener('click', onClickPlayButton);
 };
 
