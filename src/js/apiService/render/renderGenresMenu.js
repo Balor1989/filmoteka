@@ -2,11 +2,12 @@ import genresMenuTpl  from "../../../templates/genresMenu.hbs";
 import refs from '../../refs/variables';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import pagination from '../../plugins/tui-pagination';
-import movieCardTpl from "../../../templates/movieCard.hbs";
+import movieCardTpl from "../../../templates/movieCardGenr.hbs";
 
 let totalResults = 20000;  // Start value for pagination.
 
-const { rootEl, dropdown} = refs;
+const { rootEl} = refs;
+const dropdown = document.querySelector('.dropdown-content')
 
 function renderGenresMenu(genre) { dropdown.innerHTML = genresMenuTpl(genre)}
 

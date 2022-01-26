@@ -33,9 +33,7 @@ const refs = {
     mainHome: document.querySelector('.main-home'),
     mainLibrary: document.querySelector('.main-library'),
     buttonWatched: document.querySelector('.watched'),
-    buttonQueue: document.querySelector('.queue'),
-
-    dropdown:document.querySelector('.dropdown-content')
+    buttonQueue: document.querySelector('.queue')
 };
 
 export default refs;

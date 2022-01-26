@@ -6,7 +6,9 @@ import render from "../../apiService/render/renderGenresMenu";
 
 const  { renderGenresMenu, renderElements} = render;
 
-const { API_KEY, dropdown} = refs;
+const { API_KEY} = refs;
+
+const dropdown = document.querySelector('.dropdown-content')
 
 let page = "";
 
