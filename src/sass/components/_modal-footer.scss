@@ -64,28 +64,19 @@
   @media screen and (min-width: 320px) {
     min-width: 280px;
     min-height: 500px;
-    padding-top: 48px;
-    padding-left: 20px;
-    padding-bottom: 48px;
-    padding-right: 20px;
+    padding: 48px 20px;
   }
   @media screen and (min-width: 768px) {
     width: 658px;
     min-height: 562px;
     padding: 42px 28px;
     min-height: 568px;
-    padding-top: 42px;
-    padding-left: 28px;
-    padding-bottom: 42px;
-    padding-right: 28px;
+    padding: 42px 28px;
   }
   @media screen and (min-width: 1280px) {
     width: 882px;
     min-height: 568px;
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-bottom: 50px;
-    padding-right: 30px;
+    padding: 50px 30px;
   }
   &_close {
     width: 30px;
