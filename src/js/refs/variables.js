@@ -1,11 +1,16 @@
 const refs = {
+    // Key variable
     API_KEY: '7f7f3cc03c05575ccb98184b93174d1e',
+
+    // YouTube path variable
     TRAILER__PATH: 'https://www.youtube.com/embed/',
+
+    // Main render variable
     rootEl: document.querySelector('.filmlist'),
 
     // Pagination variables
     container: document.getElementById('pagination'),
-    paginationBox:document.querySelector('.pagination-box'),
+    paginationBox: document.querySelector('.pagination-box'),
 
     // Modal variables
     modalInfo: document.querySelector('.modal__detail'),
@@ -34,7 +39,15 @@ const refs = {
     mainHome: document.querySelector('.main-home'),
     mainLibrary: document.querySelector('.main-library'),
     buttonWatched: document.querySelector('.watched'),
-    buttonQueue: document.querySelector('.queue')
+    buttonQueue: document.querySelector('.queue'),
+
+    // Theme variables
+    bodyColor: document.querySelector('body'),
+    themeBtn: document.querySelector('.theme_btn'),
+    colorModal: document.querySelector('.modal'),
+    colorFooter: document.querySelector('.footer'),
+    frontendCard: document.querySelectorAll('.review-section_card'),
+    colorPageBt: document.querySelectorAll('.tui-page-bt')
 };
 
 export default refs;
