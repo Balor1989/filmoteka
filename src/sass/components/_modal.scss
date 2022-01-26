@@ -114,17 +114,15 @@
   width: 240px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   font-size: 12px;
   line-height: 1.16;
 
   @media screen and (min-width: 768px) {
     width: 264px;
-    margin-left: 32px;
   }
   @media screen and (min-width: 1024px) {
     width: 396px;
-    margin-left: 32px;
   }
 }
 .modal__item-info {
@@ -318,6 +316,7 @@
 }
 .modal__title-description {
   font-family: Roboto;
+  margin-top: 10px;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -332,6 +331,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
+  margin-bottom: 10px;
   color: #000000;
 }
 .modal__main-info {
