@@ -4,7 +4,10 @@ import './js/library/library';
 import renderPopularMovies from './js/apiService/apiService';
 import backToTop from './js/plugins/backToTop';
 import './js/plugins/themeBtn';
+import fetchGenresMenu from "./js/apiService/fetch/fetchGenresMenu";
 
 backToTop();
 
 renderPopularMovies();
+
+fetchGenresMenu();

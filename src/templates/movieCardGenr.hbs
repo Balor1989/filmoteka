@@ -1,0 +1,12 @@
+<li class="photo-card" id="{{id}}">
+{{#if poster_path}}
+		<img class="modal__img"  srcset=" https://image.tmdb.org/t/p/w500{{poster_path}} 1x,
+ 				https://image.tmdb.org/t/p/original{{poster_path}} 2x" src='https://image.tmdb.org/t/p/w300{{poster_path}}'
+				alt="{{original_title}}" loading="lazy">
+	{{else}}
+	
+		<img src='https://cdn.pixabay.com/photo/2016/03/31/18/36/cinema-1294496_1280.png' alt="default photo">
+	{{/if}}
+<h2 class="film-discription film-title">{{original_title}}</h2>
+<p class="film-discription film-details">{{genre_ids}} | {{release_date}}
+</li>
