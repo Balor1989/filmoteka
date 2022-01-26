@@ -1,9 +1,6 @@
-const bodyColor = document.querySelector('body')
-const themeBtn = document.querySelector('.theme_btn');
-const colorModal = document.querySelector('.modal');
-const colorFooter = document.querySelector('.footer');
-const frontendCard = document.querySelectorAll('.review-section_card');
-const colorPageBt = document.querySelectorAll('.tui-page-bt');
+import refs from '../refs/variables';
+
+const {bodyColor, themeBtn, colorModal, colorFooter, frontendCard, colorPageBt} = refs
 
 themeBtn.addEventListener('click', changeTheme); // Listener on button change themes
 
@@ -19,7 +16,7 @@ function changeTheme(){  // To add or remove topics by condition
 
 function changeThemeAdd() {  // Adding a dark theme
     bodyColor.classList.add('theme_btn-dark');
-        document.querySelector('.theme_icon').classList.add('theme_icon-dark');
+    document.querySelector('.theme_icon').classList.add('theme_icon-dark');
         colorModal.style.background = '#555353';
         colorFooter.style.background = '#2b2d30';
         document.querySelector('.modal_content').style.background = "#8f8f8f";
