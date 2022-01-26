@@ -1,5 +1,5 @@
 import refs from '../../refs/variables';
-import movieCard from '../../../templates/movieCard.hbs';
+import movieCard from '../../../templates/movieCardGenr.hbs';
 import { genres } from '../fetch/fetchGenresOfMovie';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import pagination from '../../plugins/tui-pagination';

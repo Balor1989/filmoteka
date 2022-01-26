@@ -105,9 +105,12 @@ button {
 }
 
 .header-nav__item:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    margin-right: 20px;
+    }
   margin-right: 39px;
 }
-
+.dropbtn,
 .header-nav__link {
   position: relative;
 
@@ -139,7 +142,6 @@ button {
   opacity: 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .header-nav__link--current::after {
   opacity: 1;
 }
@@ -221,4 +223,55 @@ button {
 
 .color_modal-dark {
   background: rgb(71, 16, 16);
+}
+
+.dropbtn {
+  border: none;
+  cursor: pointer;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: scale(1.1);
+  
+  }
+
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  z-index: 1;
+  border-radius: 3px;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  border-radius: 3px;
+
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background-color: #f74a16;
+    color:#ffffff;
+    transform: scale(1.1);
+  
+  }
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
