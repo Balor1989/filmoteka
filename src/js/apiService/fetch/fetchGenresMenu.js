@@ -3,8 +3,8 @@ import refs from '../../refs/variables';
 import renderMovies from '../render/renderMovies';
 import axios from "axios";
 import renderGenresMenu from '../render/renderGenresMenu';
-import pagination from '../../plugins/tui-pagination';
 import { page } from '../apiService';
+import pagination from '../../plugins/tui-pagination';
 
 const { API_KEY} = refs;
 
@@ -26,21 +26,23 @@ export default async function fetchGenresMenu() {
 };
 
 
-   function searchByGenre(e) {
+   async function searchByGenre(e) {
        e.preventDefault();
 
        if (e.target.nodeName !== 'A') {
            return;
        }
        const genreID = e.target.dataset.sources;
-       fetchMovies(genreID);
+       await fetchMoviesByGenres(genreID);
+       await pagination.reset(0)
 };
   
-async function fetchMovies(genreID) {
+export async function fetchMoviesByGenres(genreID) {
    
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?with_genres=${genreID}&api_key=${API_KEY}&page=${page}`);
         renderMovies(response);
+        console.log(response)
     } catch (error) {
         Notify.failure(`${error}`);
         return Promise.reject(error);
