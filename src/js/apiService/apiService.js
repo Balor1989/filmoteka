@@ -4,6 +4,7 @@ import fetchMoviesByName from './fetch/fetchMoviesByName';
 import debounce from "lodash.debounce";
 import refs from '../refs/variables';
 import pagination from '../plugins/tui-pagination';
+import { fetchMoviesByGenres } from './fetch/fetchGenresMenu';
 
 
 const { API_KEY, inputName } = refs;
@@ -41,7 +42,6 @@ async function renderPopularMovies() {
 function usePagination(event) {
     // page = event.page;
     localStorage.setItem('page', JSON.stringify(event.page))
-
     if (inputName.value) {
         fetchMoviesByName(API_KEY, event.page, inputName.value);
         return;

@@ -5,7 +5,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import pagination from '../../plugins/tui-pagination';
 
 const { rootEl } = refs;
-let totalResults = 20000;  // Start value for pagination.
+let totalResults  // Start value for pagination.
 
 // Starts movies render
 function renderMovies(response) {
