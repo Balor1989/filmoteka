@@ -35,6 +35,7 @@ export default async function fetchGenresMenu() {
        const genreID = e.target.dataset.sources;
        localStorage.setItem('genre', e.target.dataset.sources)
        await fetchMoviesByGenres(page)
+       localStorage.setItem('page', 1)
 };
   
 export async function fetchMoviesByGenres(page) {
