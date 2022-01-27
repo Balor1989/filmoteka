@@ -47,7 +47,8 @@ const refs = {
     colorModal: document.querySelector('.modal'),
     colorFooter: document.querySelector('.footer'),
     frontendCard: document.querySelectorAll('.review-section_card'),
-    colorPageBt: document.querySelectorAll('.tui-page-bt')
+    colorPageBt: document.querySelectorAll('.tui-page-bt'),
+    libraryThemeButon:document.querySelector('.library-button')
 };
 
 export default refs;
