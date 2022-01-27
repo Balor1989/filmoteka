@@ -1,9 +1,9 @@
-import genresMenuTpl  from "../../../templates/genresMenu.hbs";
+// import genresMenuTpl  from "../../../templates/genresMenu.hbs";
 
-const dropdown = document.querySelector('.dropdown-content');
+// const dropdown = document.querySelector('.dropdown-content');
 
-function renderGenresMenu(genre) {
-    dropdown.innerHTML = genresMenuTpl(genre)
-};
+// function renderGenresMenu(genre) {
+//     dropdown.innerHTML = genresMenuTpl(genre)
+// };
 
-export default renderGenresMenu;
+// export default renderGenresMenu;
