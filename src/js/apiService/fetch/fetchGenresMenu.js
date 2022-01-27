@@ -4,6 +4,7 @@ import renderMovies from '../render/renderMovies';
 import axios from "axios";
 import renderGenresMenu from '../render/renderGenresMenu';
 import { page } from '../apiService';
+import pagination from '../../plugins/tui-pagination';
 
 
 const { API_KEY} = refs;
@@ -32,10 +33,10 @@ export default async function fetchGenresMenu() {
        if (e.target.nodeName !== 'A') {
            return;
        }
-       const genreID = e.target.dataset.sources;
        localStorage.setItem('genre', e.target.dataset.sources)
        await fetchMoviesByGenres(page)
-       localStorage.setItem('page', 1)
+       pagination.reset(0)
+       
 };
   
 export async function fetchMoviesByGenres(page) {
