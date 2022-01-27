@@ -16,12 +16,10 @@ export let page = JSON.parse(localStorage.getItem('page')) || 1; // Starting pag
 const onFetchMovieByName = (e) => {
     if (!e.target.value) {
         fetchPopularMovies(API_KEY, page = 1);
-        localStorage.setItem('genre', false)
         return;
     };
 
     fetchMoviesByName(API_KEY, page = 1, inputName.value);
-    localStorage.setItem('genre', false)
 };
 
 // Handlers
@@ -36,7 +34,6 @@ async function renderPopularMovies() {
     await fetchGenresOfMovie(API_KEY);
 
     await fetchPopularMovies(API_KEY, page);
-    localStorage.setItem('genre', false)
 };
 
 
@@ -48,10 +45,6 @@ function usePagination(event) {
         fetchMoviesByName(API_KEY, event.page, inputName.value);
         return;
     };
-    if (JSON.parse(localStorage.getItem('genre'))){
-        fetchMoviesByGenres(event.page);
-        return;
-    }
 
     if (!inputName.value) {
         fetchPopularMovies(API_KEY, event.page);
