@@ -223,20 +223,16 @@ button {
   background: rgb(71, 16, 16);
 }
 
-
 .dropbtn {
   border: none;
   cursor: pointer;
   transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:hover {
     transform: scale(1.1);
-  
   }
-
-
 }
-.dropbtn{
+.dropbtn {
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
@@ -247,7 +243,6 @@ button {
 .dropdown {
   position: relative;
   display: inline-block;
-
 }
 
 .dropdown-content {
@@ -257,7 +252,6 @@ button {
   background-color: #f9f9f9;
   z-index: 1;
   border-radius: 3px;
-
 }
 
 .dropdown-content a {
@@ -270,14 +264,16 @@ button {
   line-height: 16px;
   border-radius: 3px;
 
-  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #f74a16;
-    color:#ffffff;
+    color: #ffffff;
     transform: scale(1.1);
-  
   }
 }
 .dropdown:hover .dropdown-content {
   display: block;
+  cursor: pointer;
 }
