@@ -32,6 +32,7 @@ const refs = {
 
     // Library variables
     listWatched: document.querySelector('.watched-list'),
+    libraryHomeButton: document.querySelector('.home-library-link'),
     listQueue: document.querySelector('.queue-list'),
     buttonLib: document.querySelector('.btn'),
     libraryHeader: document.querySelector('.library-page'),
